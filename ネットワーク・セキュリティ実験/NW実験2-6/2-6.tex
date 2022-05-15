@@ -1,0 +1,62 @@
+\documentclass[dvipdfmx,autodetect-engine,titlepage]{jsarticle}
+\usepackage[dvipdfm]{graphicx}
+\usepackage{ascmac}
+\usepackage{fancybox}
+\usepackage{listings}
+\usepackage{plistings}
+\usepackage{itembkbx}
+\usepackage{amsmath}
+\usepackage{svg}
+\usepackage{url}
+\usepackage{graphics}
+\usepackage{listings,jvlisting}
+\usepackage{scalefnt}
+\usepackage{multirow}
+
+\textheight=23cm
+\renewcommand{\figurename}{図}
+\renewcommand{\tablename}{表}
+\newenvironment{code}
+{\vspace{0.5zw}\VerbatimEnvironment  
+\begin{screen} 
+\baselineskip=1.0\normalbaselineskip
+ \begin{Verbatim}}
+{\end{Verbatim}
+\baselineskip=\normalbaselineskip
+ \end{screen}\vspace{0.5zw}} 
+
+\title{情報理工学部　SNコース 2回\\
+セキュリティ・ネットワーク学実験2\\
+NW実験2-6レポート}
+\author{2600200443-6\\Yamashita Kyohei\\山下 恭平}
+\date{November 1 2021}
+
+\begin{document}
+
+\maketitle
+
+\section{概要}
+webサイトを閲覧できないというトラブルに関して，自分の経験や，今回学んだコマン
+ド・ツール類の利用などによる調査，原因，および解決方法を考える。
+
+\section{webサイトを閲覧できない理由とその調査}
+必要な質問、考えられる原因、解決方法を以下の表にまとめた。
+
+\begin{table}[h]
+  \centering
+  \caption{まとめ表}
+  \begin{tabular}{|l|l|l|}
+  \hline
+  1)追加質問                                                                      & 2)考えられる原因                                                                                & 3)解決方法                                                                                                 \\ \hline \hline
+  \multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}問題のサイト以外は\\ 閲覧可能か？\end{tabular}} & \begin{tabular}[c]{@{}l@{}}(YES)サイト側の原因\\ と考えられる。\end{tabular}                           & \begin{tabular}[c]{@{}l@{}}サイト管理者に問い合わせるか、\\ 復旧を待つ。\end{tabular}                                         \\ \cline{2-3} 
+                                                                              & \begin{tabular}[c]{@{}l@{}}(NO)コンピュータ側の問題\\ だと考えられる。\end{tabular}                        & \begin{tabular}[c]{@{}l@{}}コンピュータがインターネットに\\ 接続されているか確認し、接続され\\ ている場合は、更なる調査が必要。\end{tabular}            \\ \hline
+  \begin{tabular}[c]{@{}l@{}}nslookup「サイトのホ ス\\ ト名」を実行させる\end{tabular}        & \begin{tabular}[c]{@{}l@{}}IPアドレスが返却されなけれ ば，\\ DNS に問題が生じていると考え\\ られる。\end{tabular} & \begin{tabular}[c]{@{}l@{}}更なる調査が必要(特にDNS障害の\\ 要因について)\end{tabular}                                      \\ \hline
+  \begin{tabular}[c]{@{}l@{}}ウイルスソフトなどを\\ 使用しているか？\end{tabular}               & \begin{tabular}[c]{@{}l@{}}ソフトによってサイトがブロック\\ されている可能性がある。\end{tabular}                   & \begin{tabular}[c]{@{}l@{}}アクセスするサイトが安全かどうかを\\ 検討する必要あり。アクセスしたい場合\\ は設定からホワイトリストなどに登録す\\ る。\end{tabular} \\ \hline
+  \begin{tabular}[c]{@{}l@{}}アクセスしたとき限られた\\ LANに接続していなかったか？\end{tabular}      & \begin{tabular}[c]{@{}l@{}}学内LANなどからの限定的なアクセス\\ しか受け付けないサーバの可能性がある。\end{tabular}         & 必要なLANに接続する必要がある。                                                                                        \\ \hline
+  \begin{tabular}[c]{@{}l@{}}最近そのサイトにアク セスし\\ たのはいつ?\end{tabular}             & \begin{tabular}[c]{@{}l@{}}かなり昔であれば、そのサイト自体が無く\\ なってしまっている可能性がある。\end{tabular}           & \begin{tabular}[c]{@{}l@{}}Google,Yahooなど任意の検索エンジンを\\ 用いて、再検索してみる。\end{tabular}                          \\ \hline
+  \end{tabular}
+  \end{table}
+
+
+\end{document}
+

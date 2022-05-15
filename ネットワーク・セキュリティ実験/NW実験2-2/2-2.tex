@@ -1,0 +1,78 @@
+\documentclass[dvipdfmx,autodetect-engine,titlepage]{jsarticle}
+\usepackage[dvipdfm]{graphicx}
+\usepackage{ascmac}
+\usepackage{fancybox}
+\usepackage{listings}
+\usepackage{plistings}
+\usepackage{itembkbx}
+\usepackage{amsmath}
+\usepackage{svg}
+\usepackage{url}
+\usepackage{graphics}
+\usepackage{listings,jvlisting}
+\usepackage{scalefnt}
+
+\textheight=23cm
+\renewcommand{\figurename}{図}
+\renewcommand{\tablename}{表}
+\newenvironment{code}
+{\vspace{0.5zw}\VerbatimEnvironment  
+\begin{screen} 
+\baselineskip=1.0\normalbaselineskip
+ \begin{Verbatim}}
+{\end{Verbatim}
+\baselineskip=\normalbaselineskip
+ \end{screen}\vspace{0.5zw}} 
+
+\title{情報理工学部　SNコース 2回\\
+セキュリティ・ネットワーク学実験2\\
+NW実験2-2レポート}
+\author{2600200443-6\\Yamashita Kyohei\\山下 恭平}
+\date{November 17 2021}
+\begin{document}
+
+\maketitle
+
+\section{概要}
+nslookコマンドを、自宅のネットワークおよび学内ネットワークから
+任意のサイトへ使用し、結果を表にまとめる。
+
+\section{結果}
+以下の表1,2は自宅と学内それぞれの結果を表にまとめたものである。\\
+Google,YouTube,Twitterの3つは結果が異なったが、残りのものは全て
+同じ結果となった。
+
+\begin{table}[h]
+  \centering
+  \caption{学内ネットワーク}
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+  コンピュータの種類               & ホスト名(本名)              & IPアドレス          & ホスト名(別名) \\ \hline
+  立命館大学 webサイト            & www.ritsumei.ac.jp    & 133.19.170.14   & なし       \\ \hline
+  Apple                   & apple.com             & 17.253.144.10   & なし       \\ \hline
+  Google                  & google.com            & 142.250.206.238 & なし       \\ \hline
+  YouTube                 & youtbe.com            & 172.217.161.238 & なし       \\ \hline
+  Twitter                 & twitter.com           & 104.244.42.193  & なし       \\ \hline
+  Stone Island 公式サイト      & stoneisland.com       & 54.72.108.69    & なし       \\ \hline
+  COMME des GARÇONS 公式サイト & comme-des-garcons.com & 205.186.183.189 & なし       \\ \hline
+  \end{tabular}
+  \end{table}
+
+  \begin{table}[h]
+    \centering
+    \caption{自宅のネットワーク}
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    コンピュータの種類               & ホスト名(本名)              & IPアドレス          & ホスト名(別名) \\ \hline
+    立命館大学 webサイト            & www.ritsumei.ac.jp    & 133.19.170.14   & なし       \\ \hline
+    Apple                   & apple.com             & 17.253.144.10   & なし       \\ \hline
+    Google                  & google.com            & 142.250.207.110 & なし       \\ \hline
+    YouTube                 & youtbe.com            & 142.250.206.238 & なし       \\ \hline
+    Twitter                 & twitter.com           & 104.244.42.65  & なし       \\ \hline
+    Stone Island 公式サイト      & stoneisland.com       & 54.72.108.69    & なし       \\ \hline
+    COMME des GARÇONS 公式サイト & comme-des-garcons.com & 205.186.183.189 & なし       \\ \hline
+    \end{tabular}
+    \end{table}
+
+\end{document}
+

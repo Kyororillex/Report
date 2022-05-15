@@ -1,0 +1,84 @@
+\documentclass[dvipdfmx,autodetect-engine,titlepage]{jsarticle}
+\usepackage[dvipdfm]{graphicx}
+\usepackage{ascmac}
+\usepackage{fancybox}
+\usepackage{listings}
+\usepackage{plistings}
+\usepackage{itembkbx}
+\usepackage{amsmath}
+\usepackage{svg}
+\usepackage{url}
+\usepackage{graphics}
+\usepackage{listings,jvlisting}
+\usepackage{scalefnt}
+
+\textheight=23cm
+\renewcommand{\figurename}{図}
+\renewcommand{\tablename}{表}
+\newenvironment{code}
+{\vspace{0.5zw}\VerbatimEnvironment  
+\begin{screen} 
+\baselineskip=1.0\normalbaselineskip
+ \begin{Verbatim}}
+{\end{Verbatim}
+\baselineskip=\normalbaselineskip
+ \end{screen}\vspace{0.5zw}} 
+
+\title{情報理工学部　SNコース 2回\\
+セキュリティ・ネットワーク学実験2\\
+NW実験2-3レポート}
+\author{2600200443-6\\Yamashita Kyohei\\山下 恭平}
+\date{November 17 2021}
+
+\begin{document}
+
+\maketitle
+
+\section{概要}
+自宅のネットワーク環境、および学内ネットワーク環境それぞれで、指定された
+アドレスへpingコマンドを使用し、その結果を表にまとめ、結果の違いについて
+考察する。
+
+\section{結果}
+
+\begin{table}[h]
+  \centering
+  \caption{学内}
+  \begin{tabular}{|c|c|c|}
+  \hline
+  コンピュータの種類       & ホスト名またはIPアドレス      & 応答             \\ \hline
+  立命館大学 webサイト    & www.ritsumei.ac.jp & なし             \\ \hline
+  情報理工学部実験用サーバ   & 172.25.11.22       & 平均RTT:5.636ms  \\ \hline
+  実験室内の別PC        & 172.27.74.63       & なし             \\ \hline
+  BKCのDNSサーバ     & 172.24.32.1        & 平均RTT:5.915ms  \\ \hline
+  衣笠のDNSサーバ       & 133.19.222.4       & 平均RTT:5.470ms  \\ \hline
+  OICのDNSサーバ      & 172.23.0.1         & 平均RTT90.403ms  \\ \hline
+  立命館慶祥高校のDNSサーバ & 172.20.2.7         & 平均RTT:28.768ms \\ \hline
+  \end{tabular}
+  \end{table}
+
+  \begin{table}[h]
+    \centering
+    \caption{自宅}
+    \begin{tabular}{|c|c|c|}
+    \hline
+    コンピュータの種類       & ホスト名またはIPアドレス      & 応答             \\ \hline
+    立命館大学 webサイト    & www.ritsumei.ac.jp & なし             \\ \hline
+    情報理工学部実験用サーバ   & 172.25.11.22       & なし  \\ \hline
+    実験室内の別PC        & 172.27.74.63       & なし             \\ \hline
+    BKCのDNSサーバ     & 172.24.32.1        & なし  \\ \hline
+    衣笠のDNSサーバ       & 133.19.222.4       & なし  \\ \hline
+    OICのDNSサーバ      & 172.23.0.1         & なし  \\ \hline
+    立命館慶祥高校のDNSサーバ & 172.20.2.7         & なし \\ \hline
+    \end{tabular}
+    \end{table}
+
+\section{考察}
+自宅でのネットワーク環境で行ったところ、全てのIPアドレスで応答せずにパケットロスが100\%と
+なった。ここで、次に「google.com」へpingコマンドを実行したところ、Googleのサーバは応答し
+結果を返した。よって、今回の実験で全てのサーバが応答しなかったのは、学校のDNSサーバや
+実験室のサーバは学内LAN以外からのアクセスを拒否していることが考えられる。
+
+
+\end{document}
+
