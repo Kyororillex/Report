@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p3.9.0-u1.27-210218-2.6 (utf8.uptex) (TeX Live 2021) (preloaded format=uplatex 2021.10.19)  16 MAY 2022 18:18
+This is e-upTeX, Version 3.141592653-p3.9.0-u1.27-210218-2.6 (utf8.uptex) (TeX Live 2021) (preloaded format=uplatex 2021.10.19)  16 MAY 2022 22:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -482,6 +482,11 @@ LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
 (Font)              scaled to size 4.62341pt on input line 45.
 File: pic1.png Graphic file (type bmp)
 <pic1.png>
+
+Overfull \hbox (2.23674pt too wide) in paragraph at lines 52--53
+ [] 
+ []
+
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
 (Font)              scaled to size 8.32214pt on input line 54.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
@@ -538,9 +543,6 @@ File: pic7.png Graphic file (type bmp)
 <pic7.png>
 File: pic8.png Graphic file (type bmp)
 <pic8.png>
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 [2]
 Underfull \hbox (badness 10000) in paragraph at lines 154--162
 \OT1/cmr/m/n/10 url \JY2/mc/m/n/10 は 「$\OT1/cmtt/m/n/10 http : / / appgoat . cysec-[]lab . org / Users / is0585xf / Web / Scenario1124 / VulSoft / search .
@@ -582,26 +584,51 @@ File: pic14.png Graphic file (type bmp)
 <pic14.png>
 File: pic15.png Graphic file (type bmp)
 <pic15.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[5]
 File: pic16.png Graphic file (type bmp)
 <pic16.png>
 File: pic17.png Graphic file (type bmp)
 <pic17.png>
+File: pic18.png Graphic file (type bmp)
+<pic18.png>
+File: pic19.png Graphic file (type bmp)
+<pic19.png>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[5] [6]
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 338--345
+\OT1/cmtt/m/n/10 Scenario1224 / VulSoft / bank . php ? page = 7 & from _ account _ id = 1000005 & to _ account _ id = 2000002 &
+ []
+
+File: pic20.png Graphic file (type bmp)
+<pic20.png>
+File: pic21.png Graphic file (type bmp)
+<pic21.png>
+[7]
+File: pic22.png Graphic file (type bmp)
+<pic22.png>
+File: pic23.png Graphic file (type bmp)
+<pic23.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[8] [9]
 
 LaTeX3 Info: Redefining command \BeforeClosingMainAux with sig. 'm' on line
-(LaTeX3)     333.
+(LaTeX3)     428.
 
 (out/2600200443-6.aux) ) 
 Here is how much of TeX's memory you used:
- 7512 strings out of 479460
- 116753 string characters out of 5870463
- 470538 words of memory out of 5000000
- 25033 multiletter control sequences out of 15000+600000
+ 7542 strings out of 479460
+ 117239 string characters out of 5870463
+ 470540 words of memory out of 5000000
+ 25051 multiletter control sequences out of 15000+600000
  415131 words of font info for 88 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  97i,6n,102p,836b,415s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on out/2600200443-6.dvi (7 pages, 19272 bytes).
+Output written on out/2600200443-6.dvi (10 pages, 27736 bytes).

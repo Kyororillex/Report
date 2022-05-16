@@ -49,13 +49,13 @@ Webアプリケーション脆弱性演習レポート\\}
   \centering
   \begin{minipage}[b]{0.45\linewidth}
   \begin{center}
-    \includegraphics[keepaspectratio,scale=0.32]{pic1.png}
+    \includegraphics[keepaspectratio,scale=0.34]{pic1.png}
     \end{center}
     \caption{}
   \end{minipage}
   \begin{minipage}[b]{0.45\linewidth}
   \begin{center}
-    \includegraphics[keepaspectratio,scale=0.3]{pic2.png}
+    \includegraphics[keepaspectratio,scale=0.33]{pic2.png}
     \end{center}
     \caption{}
   \end{minipage}
@@ -81,13 +81,13 @@ urlにも反映されることを利用して、アンケートページの内�
   \centering
   \begin{minipage}[b]{0.45\linewidth}
   \begin{center}
-    \includegraphics[keepaspectratio,scale=0.32]{pic3.png}
+    \includegraphics[keepaspectratio,scale=0.37]{pic3.png}
     \end{center}
     \caption{}
   \end{minipage}
   \begin{minipage}[b]{0.45\linewidth}
   \begin{center}
-    \includegraphics[keepaspectratio,scale=0.3]{pic4.png}
+    \includegraphics[keepaspectratio,scale=0.35]{pic4.png}
     \end{center}
     \caption{}
   \end{minipage}
@@ -164,13 +164,13 @@ urlに埋め込み、そのurlからアクセスした人のアンケート結�
   \centering
   \begin{minipage}[b]{0.45\linewidth}
   \begin{center}
-    \includegraphics[keepaspectratio,scale=0.3]{pic9.png}
+    \includegraphics[keepaspectratio,scale=0.35]{pic9.png}
     \end{center}
     \caption{}
   \end{minipage}
   \begin{minipage}[b]{0.45\linewidth}
   \begin{center}
-    \includegraphics[keepaspectratio,scale=0.3]{pic10.png}
+    \includegraphics[keepaspectratio,scale=0.35]{pic10.png}
     \end{center}
     \caption{}
   \end{minipage}
@@ -192,7 +192,7 @@ urlに埋め込み、そのurlからアクセスした人のアンケート結�
 
 \begin{figure}[h]
   \centering
-  \includegraphics[scale=0.4]{pic11.png}
+  \includegraphics[scale=0.5]{pic11.png}
   \caption{}
 \end{figure}
 
@@ -234,13 +234,13 @@ SQLインジェクションとは、悪意のあるリクエストにより、�
   \centering
   \begin{minipage}[b]{0.45\linewidth}
   \begin{center}
-    \includegraphics[keepaspectratio,scale=0.3]{pic12.png}
+    \includegraphics[keepaspectratio,scale=0.35]{pic12.png}
     \end{center}
     \caption{}
   \end{minipage}
   \begin{minipage}[b]{0.45\linewidth}
   \begin{center}
-    \includegraphics[keepaspectratio,scale=0.3]{pic13.png}
+    \includegraphics[keepaspectratio,scale=0.35]{pic13.png}
     \end{center}
     \caption{}
   \end{minipage}
@@ -260,20 +260,24 @@ SQLインジェクションとは、悪意のあるリクエストにより、�
   \centering
   \begin{minipage}[b]{0.45\linewidth}
   \begin{center}
-    \includegraphics[keepaspectratio,scale=0.3]{pic14.png}
+    \includegraphics[keepaspectratio,scale=0.35]{pic14.png}
     \end{center}
     \caption{}
   \end{minipage}
   \begin{minipage}[b]{0.45\linewidth}
   \begin{center}
-    \includegraphics[keepaspectratio,scale=0.3]{pic15.png}
+    \includegraphics[keepaspectratio,scale=0.35]{pic15.png}
     \end{center}
     \caption{}
   \end{minipage}
 \end{figure}
 
+このようなことが起きる原因として、プリペアードステートメントを用いた、
+値渡しによるSQL文の組み立てを行なっていないため、入力された不正な文章が
+そのままSQL文として認識されてしまっていることが挙げられる。
+
 \subsubsection*{情報漏洩(数値リテラル)}
-この演習では、口座残高確認後のurlを見ると「\url{http://appgoat.cysec-lab.org/Users/is0585xf/Web/Scenario1222/VulSoft/bank.php?page=3&account_id=1000005}」
+この演習において、口座残高確認後のurlを見ると「\url{http://appgoat.cysec-lab.org/Users/is0585xf/Web/Scenario1222/VulSoft/bank.php?page=3&account_id=1000005}」
 となっており、最後の部分を「id='」に書き換えるとデータベースエラーが発生したので、この部分に
 SQLインジェクションの脆弱性を持っていると考えられる。ここで、自分以外の口座番号
 を出力するように「account\_id = 99 OR 0 = 0」と書き換え、すべての口座残高を
@@ -283,27 +287,113 @@ SQLインジェクションの脆弱性を持っていると考えられる。�
   \centering
   \begin{minipage}[b]{0.45\linewidth}
   \begin{center}
-    \includegraphics[keepaspectratio,scale=0.3]{pic16.png}
+    \includegraphics[keepaspectratio,scale=0.35]{pic16.png}
     \end{center}
     \caption{}
   \end{minipage}
   \begin{minipage}[b]{0.45\linewidth}
   \begin{center}
-    \includegraphics[keepaspectratio,scale=0.3]{pic17.png}
+    \includegraphics[keepaspectratio,scale=0.35]{pic17.png}
     \end{center}
     \caption{}
   \end{minipage}
 \end{figure}
 
+このようなことが起きる原因として、プリペアードステートメントを用いた、
+値渡しによるSQL文の組み立てを行なっていないため、入力された不正な文章が
+そのままSQL文として認識されてしまっていることが挙げられる。
+
 
 \subsubsection*{他テーブル情報の漏洩(数値リテラル)}
+この演習において、入出金履歴確認後のurlを見ると「\url{http://appgoat.cysec-lab.org/Users/is0585xf/Web/Scenario1223/VulSoft/bank.php?page=4&account_id=1000005}」
+となっており、最後の部分を「account\_id = '」と書き換えるとデータベースエラーが発生した
+ので、この部分にSQLインジェクションの脆弱性を持っていると考えられる。前提条件より、
+usersのテーブルにはアカウント情報が格納されているので、その情報を持ってくるように
+account\_idを次のように書き換えた。
+「account\_id = 99 UNION SELECT NULL,id,password,0,0,0 FROM user」
+この結果、他のユーザのログインIDとパスワードが出力された。その様子を以下の図18,19に
+示す。
+
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[b]{0.45\linewidth}
+  \begin{center}
+    \includegraphics[keepaspectratio,scale=0.35]{pic18.png}
+    \end{center}
+    \caption{}
+  \end{minipage}
+  \begin{minipage}[b]{0.45\linewidth}
+  \begin{center}
+    \includegraphics[keepaspectratio,scale=0.35]{pic19.png}
+    \end{center}
+    \caption{}
+  \end{minipage}
+\end{figure}
+
+このようなことが起きる原因として、プリペアードステートメントを用いた、
+値渡しによるSQL文の組み立てを行なっていないため、入力された不正な文章が
+そのままSQL文として認識されてしまっていることが挙げられる。
 
 \subsubsection*{データベースの改ざん(数値リテラル)}
+この演習において、振込処理後のurlを見ると「\url{http://appgoat.cysec-lab.org/Users/is0585xf/Web/Scenario1224/VulSoft/bank.php?page=7&from_account_id=1000005&to_account_id=2000002&amount=5000000}」
+となっており、最後の部分を「to\_account\_id = '」に書き換えるとデータベースエラーが発生したので
+、この部分にSQLインジェクションの脆弱性を持っていると考えられる。
+自身の口座情報を書き換えるためにto\_account\_idを次のように書き換えた。
+「to\_account\_id=2000002;UPDATE account SET balance= 10000000 WHERE account\_id = 1000005\&amount=1000」
+この結果、自身の口座情報が更新され残高が一千万となった。その様子を以下の図20,21に
+示す。
 
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[b]{0.45\linewidth}
+  \begin{center}
+    \includegraphics[keepaspectratio,scale=0.35]{pic20.png}
+    \end{center}
+    \caption{}
+  \end{minipage}
+  \begin{minipage}[b]{0.45\linewidth}
+  \begin{center}
+    \includegraphics[keepaspectratio,scale=0.35]{pic21.png}
+    \end{center}
+    \caption{}
+  \end{minipage}
+\end{figure}
+
+このようなことが起きる原因として、プリペアードステートメントを用いた、
+値渡しによるSQL文の組み立てを行なっていないため、入力された不正な文章が
+そのままSQL文として認識されてしまっていることが挙げられる。
 
 \subsection{Level3演習}
 
 \subsubsection*{ブラインドSQLインジェクション}
+この演習において、新規登録画面のID欄において「'」と入力して、重複確認
+を行ったところ、データベースエラーが発生したので、この部分にSQLインジェク
+ションの脆弱性を持っていると考えられる。
+脆弱性が存在する入力欄は、userのテーブルにアクセスできるので、ここから
+管理者のパスワードを特定するSQL文を入力する、実際に入力する値は「sato' AND SUBSTR((SELECT password FROM user WHERE id = 'admin'),1,1) = 'a'--」
+であり、この文章を入力することでパスワードの一文字目が「a」であるかどうかの
+判定ができる。実際に入力した結果を図22に示す。
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.5]{pic22.png}
+  \caption{}
+\end{figure}
+
+今回は「使用可能なIDです」と表示されていることから、一文字目は「a」ではないこと
+が特定できた。これを、繰り返し用いることでパスワードが「bda」だと特定できたので、
+実際にログインを行ったのが図23である。
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.5]{pic23.png}
+  \caption{}
+\end{figure}
+
+このようなことが起きる原因として、プリペアードステートメントを用いた、
+値渡しによるSQL文の組み立てを行なっていないため、入力された不正な文章が
+そのままSQL文として認識されてしまっていることが挙げられる。
+
 
 \subsection*{問2}
 
@@ -312,6 +402,11 @@ SQLインジェクションの脆弱性を持っていると考えられる。�
 \section{CSRF(クロスサイト・リクエスト・フォージェリ)}
 
 \subsection{CSRFとは}
+クロスサイト・リクエスト・フォージェリの脆弱性とは、ウェブサイトにログイン
+したユーザが、悪意のある人によってあらかじめ用意された罠により、意図しない
+リクエストを実行させられてしまう脆弱性である。この脆弱性が悪用されてしまうと、
+意図しないサービスの利用（たとえば、ショッピングサイトで商品を購入）をさせ
+られてしまうなどの問題を引き起こす。
 
 \subsection{Level1演習}
 
