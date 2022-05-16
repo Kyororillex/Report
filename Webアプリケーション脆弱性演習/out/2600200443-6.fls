@@ -638,4 +638,20 @@ INPUT ./pic13.png
 INPUT ./pic13.png
 INPUT pic13.png
 INPUT extractbb -B cropbox -O pic13.png
+INPUT ./pic14.png
+INPUT ./pic14.png
+INPUT pic14.png
+INPUT extractbb -B cropbox -O pic14.png
+INPUT ./pic15.png
+INPUT ./pic15.png
+INPUT pic15.png
+INPUT extractbb -B cropbox -O pic15.png
+INPUT ./pic16.png
+INPUT ./pic16.png
+INPUT pic16.png
+INPUT extractbb -B cropbox -O pic16.png
+INPUT ./pic17.png
+INPUT ./pic17.png
+INPUT pic17.png
+INPUT extractbb -B cropbox -O pic17.png
 INPUT out/2600200443-6.aux

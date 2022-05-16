@@ -226,6 +226,9 @@ SQLインジェクションとは、悪意のあるリクエストにより、�
 \subsection{Level1演習}
 この演習では、とあるログイン画面のパスワードに「'」を入力するとデータベース
 エラーが発生することから、SQLインジェクションを引き起こす可能性がある。
+これが起きる原因として考えられるのは、バックエンドの処理においてプレースホルダー
+が使用されておらず、入力された文字列からSQL文が作成されるため、不正な文字列が
+パスワードではなく、SQL文として認識されるために起こるのが想定される。
 
 \begin{figure}[h]
   \centering
@@ -246,8 +249,52 @@ SQLインジェクションとは、悪意のあるリクエストにより、�
 \subsection{Level2演習}
 
 \subsubsection*{不正なログイン(文字列リテラル)}
+この演習では、パスワード入力画面に「'」を入力したところデータベースエラー
+が発生したのでSQLインジェクションの脆弱性があることが確認できた。そこで、
+「ID=yamada」の時にどのようなSQL文が作られるかを考えると、
+「SELECT * FROM user WHERE id = 'yamada' AND password =」
+となるので、このpasswordに対してtrueを返すような文字列「' OR '1'='1' --」
+をパスワードに入力することで、ログインすることができた。以下の図14,15に示す。
 
-\subsubsection*{情報漏洩(数値リテラル」)}
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[b]{0.45\linewidth}
+  \begin{center}
+    \includegraphics[keepaspectratio,scale=0.3]{pic14.png}
+    \end{center}
+    \caption{}
+  \end{minipage}
+  \begin{minipage}[b]{0.45\linewidth}
+  \begin{center}
+    \includegraphics[keepaspectratio,scale=0.3]{pic15.png}
+    \end{center}
+    \caption{}
+  \end{minipage}
+\end{figure}
+
+\subsubsection*{情報漏洩(数値リテラル)}
+この演習では、口座残高確認後のurlを見ると「\url{http://appgoat.cysec-lab.org/Users/is0585xf/Web/Scenario1222/VulSoft/bank.php?page=3&account_id=1000005}」
+となっており、最後の部分を「id='」に書き換えるとデータベースエラーが発生したので、この部分に
+SQLインジェクションの脆弱性を持っていると考えられる。ここで、自分以外の口座番号
+を出力するように「account\_id = 99 OR 0 = 0」と書き換え、すべての口座残高を
+出力させた。その結果を以下の図16,17に示す。
+
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[b]{0.45\linewidth}
+  \begin{center}
+    \includegraphics[keepaspectratio,scale=0.3]{pic16.png}
+    \end{center}
+    \caption{}
+  \end{minipage}
+  \begin{minipage}[b]{0.45\linewidth}
+  \begin{center}
+    \includegraphics[keepaspectratio,scale=0.3]{pic17.png}
+    \end{center}
+    \caption{}
+  \end{minipage}
+\end{figure}
+
 
 \subsubsection*{他テーブル情報の漏洩(数値リテラル)}
 
@@ -257,6 +304,8 @@ SQLインジェクションとは、悪意のあるリクエストにより、�
 \subsection{Level3演習}
 
 \subsubsection*{ブラインドSQLインジェクション}
+
+\subsection*{問2}
 
 
 
@@ -277,6 +326,8 @@ SQLインジェクションとは、悪意のあるリクエストにより、�
 \subsection{Level1演習}
 
 \subsection{Level2演習}
+
+\subsection*{問3}
 
 
 \end{document}

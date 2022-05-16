@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p3.9.0-u1.27-210218-2.6 (utf8.uptex) (TeX Live 2021) (preloaded format=uplatex 2021.10.19)  16 MAY 2022 17:19
+This is e-upTeX, Version 3.141592653-p3.9.0-u1.27-210218-2.6 (utf8.uptex) (TeX Live 2021) (preloaded format=uplatex 2021.10.19)  16 MAY 2022 18:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -578,19 +578,30 @@ File: pic12.png Graphic file (type bmp)
 <pic12.png>
 File: pic13.png Graphic file (type bmp)
 <pic13.png>
-[5]
+File: pic14.png Graphic file (type bmp)
+<pic14.png>
+File: pic15.png Graphic file (type bmp)
+<pic15.png>
+File: pic16.png Graphic file (type bmp)
+<pic16.png>
+File: pic17.png Graphic file (type bmp)
+<pic17.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[5] [6]
 
 LaTeX3 Info: Redefining command \BeforeClosingMainAux with sig. 'm' on line
-(LaTeX3)     282.
+(LaTeX3)     333.
 
 (out/2600200443-6.aux) ) 
 Here is how much of TeX's memory you used:
- 7491 strings out of 479460
- 116411 string characters out of 5870463
+ 7512 strings out of 479460
+ 116753 string characters out of 5870463
  470538 words of memory out of 5000000
- 25020 multiletter control sequences out of 15000+600000
+ 25033 multiletter control sequences out of 15000+600000
  415131 words of font info for 88 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  97i,6n,102p,836b,415s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on out/2600200443-6.dvi (6 pages, 16180 bytes).
+Output written on out/2600200443-6.dvi (7 pages, 19272 bytes).
