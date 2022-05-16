@@ -678,4 +678,48 @@ INPUT ./pic23.png
 INPUT ./pic23.png
 INPUT pic23.png
 INPUT extractbb -B cropbox -O pic23.png
+INPUT ./pic23_5.png
+INPUT ./pic23_5.png
+INPUT pic23_5.png
+INPUT extractbb -B cropbox -O pic23_5.png
+INPUT ./pic24.png
+INPUT ./pic24.png
+INPUT pic24.png
+INPUT extractbb -B cropbox -O pic24.png
+INPUT ./pic25.png
+INPUT ./pic25.png
+INPUT pic25.png
+INPUT extractbb -B cropbox -O pic25.png
+INPUT ./pic26.png
+INPUT ./pic26.png
+INPUT pic26.png
+INPUT extractbb -B cropbox -O pic26.png
+INPUT ./pic27.png
+INPUT ./pic27.png
+INPUT pic27.png
+INPUT extractbb -B cropbox -O pic27.png
+INPUT ./pic28.png
+INPUT ./pic28.png
+INPUT pic28.png
+INPUT extractbb -B cropbox -O pic28.png
+INPUT ./pic29.png
+INPUT ./pic29.png
+INPUT pic29.png
+INPUT extractbb -B cropbox -O pic29.png
+INPUT ./pic31.png
+INPUT ./pic31.png
+INPUT pic31.png
+INPUT extractbb -B cropbox -O pic31.png
+INPUT ./pic32.png
+INPUT ./pic32.png
+INPUT pic32.png
+INPUT extractbb -B cropbox -O pic32.png
+INPUT ./pic33.png
+INPUT ./pic33.png
+INPUT pic33.png
+INPUT extractbb -B cropbox -O pic33.png
+INPUT ./pic34.png
+INPUT ./pic34.png
+INPUT pic34.png
+INPUT extractbb -B cropbox -O pic34.png
 INPUT out/2600200443-6.aux

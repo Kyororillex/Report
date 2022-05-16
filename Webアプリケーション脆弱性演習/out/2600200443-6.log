@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p3.9.0-u1.27-210218-2.6 (utf8.uptex) (TeX Live 2021) (preloaded format=uplatex 2021.10.19)  16 MAY 2022 22:19
+This is e-upTeX, Version 3.141592653-p3.9.0-u1.27-210218-2.6 (utf8.uptex) (TeX Live 2021) (preloaded format=uplatex 2021.10.19)  17 MAY 2022 00:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -616,19 +616,70 @@ File: pic23.png Graphic file (type bmp)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[8] [9]
+[8]
+File: pic23_5.png Graphic file (type bmp)
+<pic23_5.png>
+File: pic24.png Graphic file (type bmp)
+<pic24.png>
+File: pic25.png Graphic file (type bmp)
+<pic25.png>
+
+Overfull \hbox (0.92763pt too wide) in paragraph at lines 434--435
+ [] 
+ []
+
+[9]
+File: pic26.png Graphic file (type bmp)
+<pic26.png>
+File: pic27.png Graphic file (type bmp)
+<pic27.png>
+File: pic28.png Graphic file (type bmp)
+<pic28.png>
+File: pic29.png Graphic file (type bmp)
+<pic29.png>
+
+Overfull \hbox (8.70528pt too wide) in paragraph at lines 489--490
+ [] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[10]
+File: pic31.png Graphic file (type bmp)
+<pic31.png>
+File: pic32.png Graphic file (type bmp)
+<pic32.png>
+
+Overfull \hbox (14.12003pt too wide) in paragraph at lines 520--521
+ [] 
+ []
+
+File: pic33.png Graphic file (type bmp)
+<pic33.png>
+File: pic34.png Graphic file (type bmp)
+<pic34.png>
+
+Overfull \hbox (14.12003pt too wide) in paragraph at lines 546--547
+ [] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[11] [12]
 
 LaTeX3 Info: Redefining command \BeforeClosingMainAux with sig. 'm' on line
-(LaTeX3)     428.
+(LaTeX3)     561.
 
 (out/2600200443-6.aux) ) 
 Here is how much of TeX's memory you used:
- 7542 strings out of 479460
- 117239 string characters out of 5870463
+ 7597 strings out of 479460
+ 118140 string characters out of 5870463
  470540 words of memory out of 5000000
- 25051 multiletter control sequences out of 15000+600000
+ 25084 multiletter control sequences out of 15000+600000
  415131 words of font info for 88 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  97i,6n,102p,836b,415s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on out/2600200443-6.dvi (10 pages, 27736 bytes).
+Output written on out/2600200443-6.dvi (13 pages, 36000 bytes).

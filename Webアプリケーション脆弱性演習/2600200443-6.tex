@@ -398,7 +398,6 @@ account\_idを次のように書き換えた。
 \subsection*{問2}
 
 
-
 \section{CSRF(クロスサイト・リクエスト・フォージェリ)}
 
 \subsection{CSRFとは}
@@ -409,18 +408,152 @@ account\_idを次のように書き換えた。
 られてしまうなどの問題を引き起こす。
 
 \subsection{Level1演習}
+この演習でのサイトでは、hidden属性のトークンを確認できなかった。
+パスワード変更画面のソースをコピーし、「action=」の内容を
+「\url{http://appgoat.cysec-lab.org/Users/is0585xf/Web/Scenario1311/VulSoft/login.php?page=5}」
+に書き換えたものをweb上で開くと、パスワード変更画面が表示される。
+このパスワード変更画面で変更したパスワードは実際に反映され、クロスサイト・リクエスト・フォージェリ
+の脆弱性を確認することができた。それら様子を以下の図24,25,26に示す。
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.4]{pic23_5.png}
+  \caption{}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[b]{0.45\linewidth}
+  \begin{center}
+    \includegraphics[keepaspectratio,scale=0.35]{pic24.png}
+    \end{center}
+    \caption{}
+  \end{minipage}
+  \begin{minipage}[b]{0.45\linewidth}
+  \begin{center}
+    \includegraphics[keepaspectratio,scale=0.35]{pic25.png}
+    \end{center}
+    \caption{}
+  \end{minipage}
+\end{figure}
+
+このようなことが起きる原因として、トークンが設定されていないこと、パスワードの
+再確認を行なっていないことなどが挙げられる。
 
 \subsection{Level2演習}
 
+\subsubsection*{意図しない命令の実行}
+この演習のサイトでは、hidden属性のトークンを保持しているが値が固定であり、変更
+直前にパスワードを求められることもないのでCSRFの脆弱性があるといえる。
+また、url内のパラメーターによって設定内容を変更可能であるので、ログイン状態で
+ある人が特定のurlにアクセスした場合、設定内容を変更することが可能である。
+実際に作成したurlは「\url{http://appgoat.cysec-lab.org/Users/is0585xf/Web/Scenario1321/VulSoft/sns.php?page=4&public=1}」
+である。このurlを掲示板にはり、リンクにアクセスした結果を以下の図27,28に示す。
 
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[b]{0.45\linewidth}
+  \begin{center}
+    \includegraphics[keepaspectratio,scale=0.35]{pic26.png}
+    \end{center}
+    \caption{}
+  \end{minipage}
+  \begin{minipage}[b]{0.45\linewidth}
+  \begin{center}
+    \includegraphics[keepaspectratio,scale=0.35]{pic27.png}
+    \end{center}
+    \caption{}
+  \end{minipage}
+\end{figure}
+
+url中にトークンを組み込まなくても動いていることから、トークンをチェックする
+処理が抜け落ちていることが考えられる。また、トークンの値が固定であれば、チェック
+を行う処理を組み込んでいても同様の攻撃が可能だと考えられる。
+
+\subsubsection*{不完全な対策}
+この演習のサイトでは、一回のログインのセッションが終了すると、次のログインでは
+異なるトークンを保持していることが確認できた。しかし、そのトークンの生成方法
+が「初期値(1000) + 1」であり、簡単に予測できてしまうことが判明した。以下の図29,30
+にその様子を示す。
+
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[b]{0.45\linewidth}
+  \begin{center}
+    \includegraphics[keepaspectratio,scale=0.5]{pic28.png}
+    \end{center}
+    \caption{}
+  \end{minipage}
+  \begin{minipage}[b]{0.45\linewidth}
+  \begin{center}
+    \includegraphics[keepaspectratio,scale=0.6]{pic29.png}
+    \end{center}
+    \caption{}
+  \end{minipage}
+\end{figure}
 
 \section{OSコマンドイジェクション}
 
 \subsection{OSコマンドイジェクションとは}
+OSコマンド・インジェクションとは、悪意のあるリクエストにより、ウェブアプリ
+ケーションが意図しないOSコマンドを実行してしまうことで、システムに不正に
+アクセスされてしまう脆弱性である。この脆弱性が悪用されてしまうとサーバ内の
+ファイルが閲覧、改ざん、削除されたり、システムが不正に操作されたりしてしま
+う可能性がある。
 
 \subsection{Level1演習}
+この演習では、メールサービスのTOの部分に脆弱性が存在するので、「\& /windows/system32/ping -n 21 127.0.0.1」
+と入力したところ、20秒以上の間レスポンスが帰って来ず、また、帰ってきたレスポンス
+は、pingコマンドの出力結果が帰ってきた。これはOSコマンドインジェクションの
+脆弱性である。その様子を以下の図31,32に示す。
+
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[b]{0.45\linewidth}
+  \begin{center}
+    \includegraphics[keepaspectratio,scale=0.35]{pic31.png}
+    \end{center}
+    \caption{}
+  \end{minipage}
+  \begin{minipage}[b]{0.45\linewidth}
+  \begin{center}
+    \includegraphics[keepaspectratio,scale=0.4]{pic32.png}
+    \end{center}
+    \caption{}
+  \end{minipage}
+\end{figure}
+
+このようなことが起きる原因として、入力された文字列に対してエスケープ処理が
+施されていないことが挙げられる。
 
 \subsection{Level2演習}
+この演習では、商品管理ページの変更後ファイル入力欄に「testtest.txt \& /windows/system32/ping -n 10 127.0.0.1」
+と入力したところ、レスポンスが10秒以上返ってこなかったため、OSコマンドイジェクション
+の脆弱性があると考えられる。そこでファイル名入力欄に「example2.txt \& dir /b c: $\backslash$ 」
+と入力したところ、cドライブ直下のファイル名とフォルダ名が出力された。その様子を以下の図33,34
+に示す。
+
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[b]{0.45\linewidth}
+  \begin{center}
+    \includegraphics[keepaspectratio,scale=0.35]{pic33.png}
+    \end{center}
+    \caption{}
+  \end{minipage}
+  \begin{minipage}[b]{0.45\linewidth}
+  \begin{center}
+    \includegraphics[keepaspectratio,scale=0.4]{pic34.png}
+    \end{center}
+    \caption{}
+  \end{minipage}
+\end{figure}
+
+これが起きる原因として考えられるのは、ユーザが入力した文字列をそのまま
+命令として使用していることが考えられる。特に処理においてexec()関数を
+使用している場合、引数がそのままshellで実行されるので危険である、今回で
+あればrename()関数などを使用すると良いと考えられる。
+
 
 \subsection*{問3}
 
