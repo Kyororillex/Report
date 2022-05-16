@@ -2,7 +2,6 @@
 \usepackage[dvipdfm]{graphicx}
 \usepackage{ascmac}
 \usepackage{fancybox}
-\usepackage{listings}
 \usepackage{plistings}
 \usepackage{itembkbx}
 \usepackage{amsmath}
@@ -10,6 +9,24 @@
 \usepackage{url}
 \usepackage{graphics}
 \usepackage{listings,jvlisting}
+\lstset{
+  basicstyle={\ttfamily},
+  identifierstyle={\small},
+  commentstyle={\smallitshape},
+  keywordstyle={\small\bfseries},
+  ndkeywordstyle={\small},
+  stringstyle={\small\ttfamily},
+  frame={tb},
+  breaklines=true,
+  columns=[l]{fullflexible},
+  numbers=left,
+  xrightmargin=0zw,
+  xleftmargin=3zw,
+  numberstyle={\scriptsize},
+  stepnumber=1,
+  numbersep=1zw,
+  lineskip=-0.5ex
+}
 
 \textheight=23cm
 \renewcommand{\figurename}{図}
@@ -208,16 +225,37 @@ Mac環境のためできませんでした。
 \subsection{問1}
 
 \subsubsection*{(a)Cookieが漏洩しない仕組みはどのようなものか}
-
+webサーバからユーザ方向へのCookieをSet-Cookieと呼び、ユーザの初回アクセス
+時には、このSet-Cookieにより、セッションIDが送信されてくる。次回以降の
+アクセス時、ユーザはこのセッションIDをサーバにCookieとして送信することで、
+サーバは同一人物だと特定する。また、このSet-Cookieには様々な属性を付与
+することが可能であり、内容としてはCookieの有効期限などを設定するものが
+多いが、漏洩に着目してSecure属性と、HttpOnly属性について説明する。
+Secure属性に関してはhttps通信をしている時にのみCookieを送信するため、
+万が一傍受されていたとしても暗号化されているので情報の漏洩は防ぐことができる。
+HttpOnly属性はJavaScriptからCookieへのアクセスを制限するというもので
+あるので、クロスサイト・スクリプティングを緩和するのに大きく役立つと考え
+られる。
 
 \subsubsection*{(b)クロスサイトスクリプティングではなぜCookieが漏洩してしまうのか。}
-
+CookieのHttpOnly属性が設定されていないと、JavaScriptからCookieへのアクセス
+が可能であるので、攻撃者は訪問したユーザのCookieを自身のサーバへ送信する
+スクリプトを脆弱性のあるアプリケーションに埋め込むことで、Cookie
+を盗むことができる。
 
 \subsubsection*{(c)Cookieの漏洩によって起きうる被害はなにか。}
-
+CookieにはセッションIDが格納されているので、Cookieが漏洩した場合、
+攻撃者は容易に他者になりすまし、個人のアカウント等を乗っ取ることが
+可能である。また、ログインIDやパスワードなどが保存されていることもあるので、
+パスワードの流出などにもつながる。
 
 \subsubsection*{(d)クロスサイト・スクリプティングでCookieが漏洩しないようにするためには}
-
+確実に漏洩を防ぐ方法として挙げられるのは、ユーザ側でCookieの使用を制限
+することである。ユーザがCookieの使用を許可しなければ、様々な情報は保存
+されないので、もし脆弱性のあるサイトにアクセスしたとしても、Cookieを盗まれる
+心配はなくなる。しかし、Cookieを制限することは利便性を犠牲にすることであるので、
+最も良い対策として考えられるのは、サーバ側のSet-CookieにおいてHttpOnly属性
+やSecure属性をしっかりと持たせることが重要であると考えられる。
 
 
 \section{SQLインジェクション}
@@ -235,7 +273,8 @@ SQLインジェクションとは、悪意のあるリクエストにより、�
 エラーが発生することから、SQLインジェクションを引き起こす可能性がある。
 これが起きる原因として考えられるのは、バックエンドの処理においてプレースホルダー
 が使用されておらず、入力された文字列からSQL文が作成されるため、不正な文字列が
-パスワードではなく、SQL文として認識されるために起こるのが想定される。
+パスワードではなく、SQL文として認識されるために起こると考えられる。
+一連の動作を図12,13に示す。\\
 
 \begin{figure}[h]
   \centering
@@ -281,7 +320,7 @@ SQLインジェクションとは、悪意のあるリクエストにより、�
 
 このようなことが起きる原因として、プリペアードステートメントを用いた、
 値渡しによるSQL文の組み立てを行なっていないため、入力された不正な文章が
-そのままSQL文として認識されてしまっていることが挙げられる。
+SQL文として認識されていることが挙げられる。
 
 \subsubsection*{情報漏洩(数値リテラル)}
 この演習において、口座残高確認後のurlを見ると「\url{http://appgoat.cysec-lab.org/Users/is0585xf/Web/Scenario1222/VulSoft/bank.php?page=3&account_id=1000005}」
@@ -380,21 +419,24 @@ account\_idを次のように書き換えた。
 管理者のパスワードを特定するSQL文を入力する、実際に入力する値は「sato' AND SUBSTR((SELECT password FROM user WHERE id = 'admin'),1,1) = 'a'--」
 であり、この文章を入力することでパスワードの一文字目が「a」であるかどうかの
 判定ができる。実際に入力した結果を図22に示す。
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[scale=0.5]{pic22.png}
-  \caption{}
-\end{figure}
-
 今回は「使用可能なIDです」と表示されていることから、一文字目は「a」ではないこと
 が特定できた。これを、繰り返し用いることでパスワードが「bda」だと特定できたので、
 実際にログインを行ったのが図23である。
 
 \begin{figure}[h]
   \centering
-  \includegraphics[scale=0.5]{pic23.png}
-  \caption{}
+  \begin{minipage}[b]{0.45\linewidth}
+  \begin{center}
+    \includegraphics[keepaspectratio,scale=0.3]{pic22.png}
+    \end{center}
+    \caption{}
+  \end{minipage}
+  \begin{minipage}[b]{0.45\linewidth}
+  \begin{center}
+    \includegraphics[keepaspectratio,scale=0.3]{pic23.png}
+    \end{center}
+    \caption{}
+  \end{minipage}
 \end{figure}
 
 このようなことが起きる原因として、プリペアードステートメントを用いた、
@@ -402,9 +444,50 @@ account\_idを次のように書き換えた。
 そのままSQL文として認識されてしまっていることが挙げられる。
 
 
-\subsection{問2}
+\subsection{問2:不正なログイン(文字列リテラル)のコード修正}
 
+以下は修正前のコードである。
+\begin{lstlisting}[caption=修正前,label=bank1221.class.php]
+  public function login()
+  {
+    $db = $this->get_db();
+    $param = $this->get_param();
+    try {
+        // ユーザからの入力値を文字列連結してSQL文を組み立てている
+        $stmt = $db->prepare("SELECT * FROM user WHERE id = '" . $param["id"] . "' AND
+                              password = '" . $param["password"] .  "';");
+        if ($stmt == null) {
+            throw new Exception();
+        }
+        // プレースホルダを使わずにプリペアドステートメントを実行している
+        $stmt->execute();
+// 以降は省略
+\end{lstlisting}
 
+修正前のコードだと入力された文字列が値だけではなく、SQL文として認識され、
+SQLインジェクションを引き起こす危険性がある。そこで、SQL文は固定で、
+値のみを後から適応する形に書き換えてやる必要がある。その書き換え後の
+コードが以下のものである。
+
+\begin{lstlisting}[caption=修正後,label=bank1221.class.php]
+  public function login()
+  {
+    $db = $this->get_db();
+    $param = $this->get_param();
+    try {
+        // 疑問符パラメータを用いてSQLステートメントを準備する
+        $stmt = $db->prepare("SELECT * FROM user WHERE id = ? AND password = ?");
+        if ($stmt == null) {
+            throw new Exception();
+        }
+        // 値の配列を渡してプリペアドステートメントを実行する
+        $stmt->execute(array($param["id"], $param["password"]));
+\end{lstlisting}
+
+修正後のコードでは、SQL文中にプレースホルダとして値の場所をあらかじめ確保しておき、
+後から入力された値を配列として渡している。こうすることにより、値に悪意のある
+文字列が入力されたとしても、あくまでも渡される値として処理されるので、SQLインジェクション
+を引き起こすことはできない。
 
 \section{CSRF(クロスサイト・リクエスト・フォージェリ)}
 
@@ -502,11 +585,26 @@ url中にトークンを組み込まなくても動いていることから、�
   \end{minipage}
 \end{figure}
 
+\subsection{問3:意図しない命令の実行の新たな修正方法}
+Hidden属性を用いた秘密情報の交換以外の方法でクロスサイト・リクエスト・フォージェリ
+の意図しない命令を防ぐ方法として、重要な命令の直前に確認画面を設けることがあげられる。
+CSRFが起きる前提条件としてユーザはログイン状態を維持している状態であり、
+トークンが適切に設定されていなければ、攻撃者による罠サイトにアクセス
+した時点で攻撃が成立してしまうが、パスワード認証などの確認画面を
+設けることで、ユーザは身に覚えのない入力をする必要に迫られるので、
+異変に気づくことができるので、CSRFを防ぐことができると考えられる。
+図35はその一連の流れをまとめたものである。
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.35]{pic35.png}
+  \caption{}
+\end{figure}
+
+
 \section{OSコマンドイジェクション}
 
 \subsection{OSコマンドイジェクションとは}
-
-\subsubsection*{脆弱性の概要および発見演習}
 OSコマンド・インジェクションとは、悪意のあるリクエストにより、ウェブアプリ
 ケーションが意図しないOSコマンドを実行してしまうことで、システムに不正に
 アクセスされてしまう脆弱性である。この脆弱性が悪用されてしまうとサーバ内の
@@ -514,22 +612,24 @@ OSコマンド・インジェクションとは、悪意のあるリクエスト
 う可能性がある。
 
 \subsection{Level1演習}
+
+\subsubsection*{脆弱性の概要および発見演習}
 この演習では、メールサービスのTOの部分に脆弱性が存在するので、「\& /windows/system32/ping -n 21 127.0.0.1」
 と入力したところ、20秒以上の間レスポンスが帰って来ず、また、帰ってきたレスポンス
 は、pingコマンドの出力結果が帰ってきた。これはOSコマンドインジェクションの
-脆弱性である。その様子を以下の図31,32に示す。
+脆弱性である。その様子を以下の図32,33に示す。
 
 \begin{figure}[h]
   \centering
   \begin{minipage}[b]{0.45\linewidth}
   \begin{center}
-    \includegraphics[keepaspectratio,scale=0.35]{pic31.png}
+    \includegraphics[keepaspectratio,scale=0.3]{pic31.png}
     \end{center}
     \caption{}
   \end{minipage}
   \begin{minipage}[b]{0.45\linewidth}
   \begin{center}
-    \includegraphics[keepaspectratio,scale=0.4]{pic32.png}
+    \includegraphics[keepaspectratio,scale=0.35]{pic32.png}
     \end{center}
     \caption{}
   \end{minipage}
@@ -542,7 +642,7 @@ OSコマンド・インジェクションとは、悪意のあるリクエスト
 この演習では、商品管理ページの変更後ファイル入力欄に「testtest.txt \& /windows/system32/ping -n 10 127.0.0.1」
 と入力したところ、レスポンスが10秒以上返ってこなかったため、OSコマンドイジェクション
 の脆弱性があると考えられる。そこでファイル名入力欄に「example2.txt \& dir /b c: $\backslash$ 」
-と入力したところ、cドライブ直下のファイル名とフォルダ名が出力された。その様子を以下の図33,34
+と入力したところ、cドライブ直下のファイル名とフォルダ名が出力された。その様子を以下の図34,35
 に示す。
 
 \begin{figure}[h]
@@ -565,8 +665,6 @@ OSコマンド・インジェクションとは、悪意のあるリクエスト
 命令として使用していることが考えられる。特に処理においてexec()関数を
 使用している場合、引数がそのままshellで実行されるので危険である、今回で
 あればrename()関数などを使用すると良いと考えられる。
-
-\subsection{問3}
 
 
 \end{document}

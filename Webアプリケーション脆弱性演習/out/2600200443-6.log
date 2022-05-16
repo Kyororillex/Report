@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p3.9.0-u1.27-210218-2.6 (utf8.uptex) (TeX Live 2021) (preloaded format=uplatex 2021.10.19)  17 MAY 2022 01:00
+This is e-upTeX, Version 3.141592653-p3.9.0-u1.27-210218-2.6 (utf8.uptex) (TeX Live 2021) (preloaded format=uplatex 2021.10.19)  17 MAY 2022 04:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -97,7 +97,9 @@ Style option: `fancybox' v1.4 <2010/05/15> (tvz)
 \EndVerbatimTokens=\toks21
 \Verbatim@Outfile=\write3
 \Verbatim@Infile=\read2
-) (/usr/local/texlive/2021/texmf-dist/tex/latex/listings/listings.sty
+) (./plistings.sty
+Package: plistings 2020-03-24 v0.14 Japanese support of listings package
+(/usr/local/texlive/2021/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count188
 \lst@gtempboxa=\box76
 \lst@token=\toks22
@@ -119,8 +121,6 @@ File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 File: listings.cfg 2020/03/24 1.8d listings configuration
 ))
 Package: listings 2020/03/24 1.8d (Carsten Heinz)
-(./plistings.sty
-Package: plistings 2020-03-24 v0.14 Japanese support of listings package
 (/usr/local/texlive/2021/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count196
@@ -429,86 +429,90 @@ File: l3backend-dvipdfmx.def 2021-03-18 L3 backend support: dvipdfmx
 \g__pdf_backend_object_int=\count299
 \g__pdf_backend_annotation_int=\count300
 \g__pdf_backend_link_int=\count301
-) (out/2600200443-6.aux)
+) (out/2600200443-6.aux
+
+LaTeX Warning: Label `bank1221.class.php' multiply defined.
+
+)
 \openout1 = `2600200443-6.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for JY2/mc/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for JT2/mc/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for JY2/mc/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for JT2/mc/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
 \c@lstlisting=\count302
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
-(Font)              scaled to size 15.9785pt on input line 33.
+(Font)              scaled to size 15.9785pt on input line 50.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 15.9785pt on input line 33.
+(Font)              scaled to size 15.9785pt on input line 50.
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 33.
+(Font)              scaled to size 11.09619pt on input line 50.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 33.
+(Font)              scaled to size 11.09619pt on input line 50.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 5.5481pt on input line 33.
+(Font)              scaled to size 5.5481pt on input line 50.
 [1
 
 ]
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 35.
+(Font)              scaled to size 13.31541pt on input line 52.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 35.
+(Font)              scaled to size 13.31541pt on input line 52.
 LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 35.
+(Font)              scaled to size 13.31541pt on input line 52.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 13.31541pt on input line 35.
+(Font)              scaled to size 13.31541pt on input line 52.
 LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 37.
+(Font)              scaled to size 11.09619pt on input line 54.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 11.09619pt on input line 37.
+(Font)              scaled to size 11.09619pt on input line 54.
 LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 45.
+(Font)              scaled to size 9.24683pt on input line 62.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 9.24683pt on input line 45.
+(Font)              scaled to size 9.24683pt on input line 62.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 47.
+(Font)              scaled to size 6.47278pt on input line 64.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 47.
+(Font)              scaled to size 4.62341pt on input line 64.
 File: pic1.png Graphic file (type bmp)
 <pic1.png>
 
-Overfull \hbox (2.23674pt too wide) in paragraph at lines 54--55
+Overfull \hbox (2.23674pt too wide) in paragraph at lines 71--72
  [] 
  []
 
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 56.
+(Font)              scaled to size 8.32214pt on input line 73.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 56.
+(Font)              scaled to size 8.32214pt on input line 73.
 File: pic2.png Graphic file (type bmp)
 <pic2.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 73--81
+Underfull \hbox (badness 10000) in paragraph at lines 90--98
 \JY2/mc/m/n/10 「$\OT1/cmtt/m/n/10 http : / / appgoat . cysec-[]lab . org / Users / is0585xf / Web / Scenario1121 / VulSoft / enquete . php ?
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 73--81
+Underfull \hbox (badness 10000) in paragraph at lines 90--98
 \OT1/cmtt/m/n/10 page = 2 & name = <[]script >[] document . getElementById("account" ) .innerHTML = '[]\JY2/mc/m/n/10 なんでも入力して
  []
 
 
-Underfull \hbox (badness 1406) in paragraph at lines 73--81
+Underfull \hbox (badness 1406) in paragraph at lines 90--98
 \JY2/mc/m/n/10 ね \OT1/cmtt/m/n/10 '[] <[]/script >[] &sex = 0 & old = 20 & company = &xss = 1 & trouble = 1 & content=$ \JY2/mc/m/n/10 」 である 。 これは 、 \OT1/cmr/m/n/10 url \JY2/mc/m/n/10 内の
  []
 
@@ -520,17 +524,17 @@ File: pic4.png Graphic file (type bmp)
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 103--110
+Underfull \hbox (badness 10000) in paragraph at lines 120--127
 \OT1/cmtt/m/n/10 / / appgoat . cysec-[]lab . org / Users / is0585xf / Web / Scenario1122 / VulSoft / enquete . php ? page = 2 &
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 103--110
+Underfull \hbox (badness 10000) in paragraph at lines 120--127
 \OT1/cmtt/m/n/10 name = <[]script >[] document . getElementById("enquete _ form" ) .action = '[]https : / / zyouhourouei .
  []
 
 
-Underfull \hbox (badness 2269) in paragraph at lines 103--110
+Underfull \hbox (badness 2269) in paragraph at lines 120--127
 \OT1/cmtt/m/n/10 com '[] <[]/script >[] &sex = 0 & old = &company = &xss = 1 & trouble = 1 & content=$ \JY2/mc/m/n/10 」 である 。 これは 、 \OT1/cmr/m/n/10 url \JY2/mc/m/n/10 内の
  []
 
@@ -544,17 +548,17 @@ File: pic7.png Graphic file (type bmp)
 File: pic8.png Graphic file (type bmp)
 <pic8.png>
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 156--164
+Underfull \hbox (badness 10000) in paragraph at lines 173--181
 \OT1/cmr/m/n/10 url \JY2/mc/m/n/10 は 「$\OT1/cmtt/m/n/10 http : / / appgoat . cysec-[]lab . org / Users / is0585xf / Web / Scenario1124 / VulSoft / search .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 156--164
+Underfull \hbox (badness 10000) in paragraph at lines 173--181
 \OT1/cmtt/m/n/10 php ? page = 1 & submit = 1 & keyword = <[]script >[] document . getElementById('[]link0 '[] ) . href = '[]http :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 156--164
+Underfull \hbox (badness 10000) in paragraph at lines 173--181
 \OT1/cmtt/m/n/10 / / appgoat . cysec-[]lab . org / Users / is0585xf / Web / Scenario1124 / attackers _ page . php '[] ;<[]/script>[]$\JY2/mc/m/n/10 」
  []
 
@@ -563,12 +567,12 @@ File: pic9.png Graphic file (type bmp)
 File: pic10.png Graphic file (type bmp)
 <pic10.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 187--194
+Underfull \hbox (badness 10000) in paragraph at lines 204--211
 \JY2/mc/m/n/10 「$\OT1/cmtt/m/n/10 http : / / appgoat . cysec-[]lab . org / Users / is0585xf / Web / Scenario1131 / VulSoft / bbs . php ? name = 1 &
  []
 
 
-Underfull \hbox (badness 3503) in paragraph at lines 187--194
+Underfull \hbox (badness 3503) in paragraph at lines 204--211
 \OT1/cmtt/m/n/10 title = 1 & url = &content = <[]script >[] document . getElementById("warning" ) .innerHTML = "\JY2/mc/m/n/10 管理者の発
  []
 
@@ -580,43 +584,51 @@ File: pic12.png Graphic file (type bmp)
 <pic12.png>
 File: pic13.png Graphic file (type bmp)
 <pic13.png>
-File: pic14.png Graphic file (type bmp)
-<pic14.png>
-File: pic15.png Graphic file (type bmp)
-<pic15.png>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [5]
+File: pic14.png Graphic file (type bmp)
+<pic14.png>
+File: pic15.png Graphic file (type bmp)
+<pic15.png>
 File: pic16.png Graphic file (type bmp)
 <pic16.png>
 File: pic17.png Graphic file (type bmp)
 <pic17.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[6]
 File: pic18.png Graphic file (type bmp)
 <pic18.png>
 File: pic19.png Graphic file (type bmp)
 <pic19.png>
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 345--352
+Underfull \hbox (badness 10000) in paragraph at lines 384--391
 \OT1/cmtt/m/n/10 Scenario1224 / VulSoft / bank . php ? page = 7 & from _ account _ id = 1000005 & to _ account _ id = 2000002 &
  []
 
+[7]
 File: pic20.png Graphic file (type bmp)
 <pic20.png>
 File: pic21.png Graphic file (type bmp)
 <pic21.png>
-[7]
 File: pic22.png Graphic file (type bmp)
 <pic22.png>
 File: pic23.png Graphic file (type bmp)
 <pic23.png>
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 [8]
+LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
+(Font)              scaled to size 6.47278pt on input line 1.
+LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
+(Font)              scaled to size 8.32214pt on input line 1.
+LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
+(Font)              scaled to size 8.32214pt on input line 1.
+LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 1.
+(/usr/local/texlive/2021/texmf-dist/tex/latex/base/ts1cmtt.fd
+File: ts1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+) [9]
 File: pic23_5.png Graphic file (type bmp)
 <pic23_5.png>
 File: pic24.png Graphic file (type bmp)
@@ -624,14 +636,11 @@ File: pic24.png Graphic file (type bmp)
 File: pic25.png Graphic file (type bmp)
 <pic25.png>
 
-Overfull \hbox (0.92763pt too wide) in paragraph at lines 444--445
+Overfull \hbox (0.92763pt too wide) in paragraph at lines 527--528
  [] 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[9]
+[10]
 File: pic26.png Graphic file (type bmp)
 <pic26.png>
 File: pic27.png Graphic file (type bmp)
@@ -641,48 +650,38 @@ File: pic28.png Graphic file (type bmp)
 File: pic29.png Graphic file (type bmp)
 <pic29.png>
 
-Overfull \hbox (8.70528pt too wide) in paragraph at lines 499--500
+Overfull \hbox (8.70528pt too wide) in paragraph at lines 582--583
  [] 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[10]
+[11]
+File: pic35.png Graphic file (type bmp)
+<pic35.png>
 File: pic31.png Graphic file (type bmp)
 <pic31.png>
 File: pic32.png Graphic file (type bmp)
 <pic32.png>
 
-Overfull \hbox (14.12003pt too wide) in paragraph at lines 532--533
- [] 
- []
+LaTeX Warning: `h' float specifier changed to `ht'.
 
+[12]
 File: pic33.png Graphic file (type bmp)
 <pic33.png>
 File: pic34.png Graphic file (type bmp)
 <pic34.png>
 
-Overfull \hbox (14.12003pt too wide) in paragraph at lines 558--559
+Overfull \hbox (14.12003pt too wide) in paragraph at lines 658--659
  [] 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[11] [12]
+[13]
 
 LaTeX3 Info: Redefining command \BeforeClosingMainAux with sig. 'm' on line
-(LaTeX3)     572.
+(LaTeX3)     670.
 
-(out/2600200443-6.aux) ) 
-Here is how much of TeX's memory you used:
- 7597 strings out of 479460
- 118140 string characters out of 5870463
- 470540 words of memory out of 5000000
- 25084 multiletter control sequences out of 15000+600000
- 415131 words of font info for 88 fonts, out of 8000000 for 9000
- 934 hyphenation exceptions out of 8191
- 97i,6n,102p,836b,415s stack positions out of 5000i,500n,10000p,200000b,80000s
+(out/2600200443-6.aux)
 
-Output written on out/2600200443-6.dvi (13 pages, 36224 bytes).
+LaTeX Warning: There were multiply-defined labels.
+
+ )
+Output written on out/2600200443-6.dvi (14 pages, 46364 bytes).
