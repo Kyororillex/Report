@@ -25,34 +25,88 @@
 
 \title{情報理工学部　SNコース 3回\\
 ワイヤレス通信システム\\
-第一回授業(4/11)ノート}
+放射電磁界の距離依存性}
 \author{2600200443-6\\Yamashita Kyohei\\山下 恭平}
-\date{Dec 7 2021}
+\date{May 15 2022}
 
 \begin{document}
 
 \maketitle
 
-\section{授業内容}
-・この授業の教科書はセキュリティ・ネットワーク学実験３の物と同じである。\\
+\section{十分遠方における時の放射界の導出}
 
-・電波は電磁波の一種である、電波法により3000000MHz以下の電磁波を
-「電波」と定義している。\\
+式(2・18)(2・20)から式(2・22)(2・23)を導出する。\\
 
-・電磁波は横波である。\\
+\begin{align*}
+  E_{\theta } &= \frac{Idl\sin \theta }{j4\pi \omega \epsilon}(\frac{k^2}{r}-\frac{jk}{r^2}-\frac{1}{r^3})e^{-jkr}\\
+\end{align*}
+十分遠方かつ真空の場合を考えているので。\\
 
-・場の理論・・・物理量が空間的に分布するとき、場を作っている。\\
+\begin{align*}
+  &= \frac{Idl\sin \theta }{j4\pi \omega \epsilon_0}\frac{k^2}{r}e^{-jkr}\\
+\end{align*}
 
-・物理量にはベクトルとスカラーがあり、電磁波はベクトルである。\\
+\begin{math}
+  k^2 = \omega ^2 \epsilon \mu
+\end{math}
+より。
 
-・電波は周波数を適切に設定することで、反射を調節することが可能であり、
-多くの建物がある場所などでも電波が届くのはこのためである。\\
+\begin{align*}
+  &= \frac{Idl\omega \mu_0 \sin \theta }{j4\pi r}e^{-jkr}\\
+\end{align*}
 
-・物理的な普遍量は光速cであり、電波は光であるので、電波の周波数か波長が
-分かれば、もう一方は自動的に求めることが可能である。\begin{math}
-  c = \lambda f
-\end{math}\\
+\begin{math}
+  \omega = \frac{2\pi c}{\lambda }
+\end{math}
+より。
 
+\begin{align*}
+  &= \frac{Idl \mu_0 c\sin \theta }{j2\lambda r}e^{-jkr}\\
+\end{align*}
+
+\begin{math}
+  c = \frac{1}{\sqrt{\epsilon _{0}\mu _0 } }
+\end{math}
+より
+
+\begin{align*}
+  &= \frac{Idl \mu_0 \sin \theta }{j2\lambda r \sqrt{\epsilon _{0}\mu _0 }}e^{-jkr}\\
+\end{align*}
+
+分母分子に
+\begin{math}
+  \sqrt{\mu _0} 
+\end{math}
+をかけると
+
+\begin{align*}
+  &= \frac{Idl\sin \theta }{j2\lambda r}\sqrt{\frac{\mu _0}{\epsilon _0} } e^{-jkr}\\
+\end{align*}
+
+\begin{math}
+  \sqrt{\frac{\mu _0}{\epsilon _0} } = 120\pi
+\end{math}
+より
+
+\begin{align*}
+  &= \frac{j60\pi Idl\sin \theta }{\lambda r}e^{-jkr} \tag{(2・22)真ん中}
+\end{align*}
+
+同様に教科書、式(2・18)を計算すると。
+
+\begin{align*}
+  H_\phi &= \frac{Idl\sin \theta }{4\pi }(\frac{jk}{r}+\frac{1}{r^2})e^-jkr\\
+  &= \frac{Idl\sin \theta }{4\pi }\frac{jk}{r}e^-jkr\\
+  &= \frac{jIdl\omega \sqrt{\epsilon _{0}\mu _0}\sin \theta}{4\pi r}e^-jkr\\
+  &= \frac{jIdl\sin \theta}{2\lambda r}e^-jkr
+\end{align*}
+
+となるので。
+
+\begin{align*}
+  E_{\theta } = \frac{j60\pi Idl\sin \theta }{\lambda r}e^{-jkr} = Z_{0}H_\phi \tag{2・22}\\
+  H_\phi = \frac{jIdl\sin \theta}{2\lambda r}e^{-jkr} = \frac{E_\theta }{Z_0} \tag{2・23}
+\end{align*}
 
 \end{document}
 
