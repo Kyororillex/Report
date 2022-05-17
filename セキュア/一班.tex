@@ -1,0 +1,68 @@
+\documentclass[dvipdfmx,autodetect-engine]{jsarticle}
+\usepackage[dvipdfm]{graphicx}
+\usepackage{ascmac}
+\usepackage{fancybox}
+\usepackage{listings}
+\usepackage{plistings}
+\usepackage{itembkbx}
+\usepackage{amsmath}
+\usepackage{svg}
+\usepackage{url}
+\usepackage{graphics}
+\usepackage{listings,jvlisting}
+
+\textheight=23cm
+\renewcommand{\figurename}{図}
+\renewcommand{\tablename}{表}
+\newenvironment{code}
+{\vspace{0.5zw}\VerbatimEnvironment  
+\begin{screen} 
+\baselineskip=1.0\normalbaselineskip
+ \begin{Verbatim}}
+{\end{Verbatim}
+\baselineskip=\normalbaselineskip
+ \end{screen}\vspace{0.5zw}} 
+
+ \title{Process Monitorを用いたマルウェアの動的解析} 
+ \author{山下恭平、塚本覇虎、奥若菜}
+ \date{2022年5月17日}
+ \begin{document} 
+ \maketitle
+
+\section{テーマ}
+この実験では、擬似マルウェアツールShinoBotとProcess Monitorを用いた
+マルウェアの動的解析を行う。
+
+\section{環境}
+本実験は以下の県境において実験を行う。
+\begin{quote}
+  \begin{itemize}
+   \item Virtual Box ・・・ 仮想環境、今回はWindows10をインストールしている。
+   \item Prosess Monitor ・・・ 動作しているプロセスを監視し、そのログを採取するソフト。
+   \item ShinoBot ・・・        RAT(Random Access Tool)型のマルウェアを再現したソフト、web上に設置されたサーバから感染PCを操作できる。
+  \end{itemize}
+ \end{quote}
+
+\section{行なったこと}
+感染PCの特定のァイルをShinoBotから命令を送り削除した時のプロセスのログと、
+通常の削除のログを取り、双方のログを比較しながら、怪しいプロセスの特定を
+行った。
+
+\section{分かったこと}
+ShinoBotから送られてきた命令は「ShinoBot.exe → cmd.exe → cohost.exe → cmd.exe → powershell」
+の順にプロセスが遷移し、削除が行われていた。\\
+一方で通常の削除では、「cmd.exe → powershell」の順でプロセスが遷移しているのを確認した。
+ShinoBotによるものが通常とは異なる挙動を示していたが、cmd.exeおよびpowershell
+にて作成、実行されるプロセスはほとんどが一致していることも確認できた。
+
+\section{予想}
+
+\begin{quote}
+  \begin{itemize}
+   \item cohost.exeを一度経由することが、外部から操作されているときに見られる
+   特徴である可能性。
+  \end{itemize}
+ \end{quote}
+
+\end{document}
+
