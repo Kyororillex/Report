@@ -1,0 +1,204 @@
+\documentclass[dvipdfmx,autodetect-engine,titlepage]{jsarticle}
+\usepackage[dvipdfm]{graphicx}
+\usepackage{ascmac}
+\usepackage{fancybox}
+\usepackage{listings}
+\usepackage{plistings}
+\usepackage{itembkbx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{svg}
+\usepackage{url}
+\usepackage{graphics}
+\usepackage{listings,jvlisting}
+
+\textheight=23cm
+\renewcommand{\figurename}{図}
+\renewcommand{\tablename}{表}
+\newenvironment{code}
+{\vspace{0.5zw}\VerbatimEnvironment  
+\begin{screen} 
+\baselineskip=1.0\normalbaselineskip
+ \begin{Verbatim}}
+{\end{Verbatim}
+\baselineskip=\normalbaselineskip
+ \end{screen}\vspace{0.5zw}} 
+
+\title{情報理工学部　SNコース 3回\\
+ワイヤレス通信システム\\
+4th Week 磁気ダイポール}
+\author{2600200443-6\\Yamashita Kyohei\\山下 恭平}
+\date{May 28 2022}
+
+\begin{document}
+
+\maketitle
+
+\section{教科書P19,式(2・24)の導出}
+
+マクスウェル方程式より
+\begin{align}
+  \nabla \times \mathbf{E}  &= -\frac{\partial \mathbf{B} }{\partial t} \\
+  \nabla \times \mathbf{H}  &= \frac{\partial \mathbf{D} }{\partial t} + \mathbf{J}
+\end{align} 
+
+また、ベクトルポテンシャル\begin{math}\mathbf{A}\end{math}は、自由空間に
+おいて以下のように定義される
+
+\begin{align}
+  \mathbf{B} &= \nabla \times \mathbf{A}
+\end{align}
+
+式(1)に式(3)を代入すると
+
+\begin{align*}
+  \nabla \times \mathbf{E}  &= -\frac{\partial}{\partial t} (\nabla \times \mathbf{A})\\
+  &= \nabla \times (-\frac{\partial \mathbf{A}}{\partial t}) \\
+  &\nabla \times (\mathbf{E} + \frac{\partial \mathbf{A}}{\partial t}) = 0
+\end{align*}
+
+\begin{math}
+  \nabla \times \nabla \phi = 0 であるので,
+\end{math}
+
+\begin{align}
+  \mathbf{E} + \frac{\partial \mathbf{A}}{\partial t} = \nabla \phi \notag\\
+  \mathbf{E} = \nabla \phi - j\omega\mathbf{A}
+\end{align}
+
+が得られ、
+\begin{math}
+  \mathbf{B} = \mu \mathbf{H} と \nabla \times \nabla \times \mathbf{A} = \nabla\nabla\cdot\mathbf{A} - \nabla^2 \mathbf{A} と \mathbf{D} = \epsilon \mathbf{E}
+\end{math}
+から,式(2)より
+
+
+\begin{align*}
+  \nabla \times \mathbf{H}  = \frac{\partial \mathbf{D} }{\partial t} + \mathbf{J}\\
+  \nabla \times \frac{\mathbf{B}}{\mu } = \mathbf{J} + j\omega\epsilon\mathbf{E}\\
+  \nabla \times \{ \frac{1}{\mu} (\nabla \times \mathbf{A}) \} = \mathbf{J} + j\omega\epsilon\mathbf{E}\\
+  \frac{1}{\mu}(\nabla\times\nabla\times\mathbf{A}) = \mathbf{J} + j\omega\epsilon\mathbf{E}\\
+  \frac{1}{\mu}(\nabla\nabla\cdot\mathbf{A} - \nabla^2 \mathbf{A}) = \mathbf{J} + j\omega\epsilon\mathbf{E}\\
+\end{align*}
+
+これに式(4)を代入すると
+
+\begin{align*}
+  \frac{1}{\mu}(\nabla\nabla\cdot\mathbf{A} - \nabla^2 \mathbf{A}) = \mathbf{J} + j\omega\epsilon(\nabla \phi - j\omega\mathbf{A})\\
+  \nabla\nabla\cdot\mathbf{A} - \nabla^2 \mathbf{A} = \mu\mathbf{J} + j\omega\epsilon\mu\nabla\phi + \omega^2 \epsilon\mu\mathbf{A}\\
+  \nabla^2 \mathbf{A} - \nabla(\nabla\cdot\mathbf{A} - j\omega\epsilon\mu\phi) + \omega^2 \epsilon\mu\mathbf{A} = -\mu\mathbf{J}
+\end{align*}
+
+\begin{math}
+  ここでベクトル関数の回転と発散は独自に決められるため、
+  \nabla\cdot\mathbf{A} - j\omega\epsilon\mu\phi=0 を満足するように
+  値を設定し、k^2 = \omega^2 \epsilon\mu とすると
+\end{math}
+
+\begin{align}
+  (\nabla^2 + k^2)A_z = -\mu J_z
+\end{align}
+
+となる、この式をラプラシアンの球座標表現を用いて展開すると以下の波動方程式が得られる。
+
+\begin{align*}
+  \frac{1}{r^2}\frac{\partial}{\partial r}r^2\frac{\partial}{A_z} + k^2 A_z = 0
+\end{align*}
+
+この波動方程式を満たす基本解のうち、外向波のベクトルポテンシャルは比例定数
+\begin{math}C_1\end{math}を用いて、以下のように表せる。
+
+\begin{align*}
+  A_z = C_1 \frac{e^{-jkr}}{r}
+\end{align*}
+
+比例定数決定のために、式(5)の両辺を半径\begin{math}r_0\end{math}の
+微小体積で積分すると。
+
+\begin{align*}
+  \int_{V} \nabla^2 A_z dV + k^2 \int_{V}A_z dV = -\mu\int_{V} J_z dV \\
+  \int_{V} \nabla\cdot\nabla A_z dV = -k^2 \int_{V}A_z dV -\mu\int_{V} J_z dV
+\end{align*}
+
+ガウスの定理より、
+
+\begin{align}
+  \oint_{S}\nabla A_z dS =  -k^2 \int_{V}A_z dV -\mu\int_{V} J_z dV \notag\\
+  \int_{0}^{2\pi}\int_{0}^{\pi} \nabla A_z \cdot \mathbf{\hat{r}}r_{0}^2\sin \theta \,d\theta\,d\phi = -k^2 \int_{V}A_z dV -\mu\int_{V} J_z dV
+\end{align}
+
+が得られる、ただし\begin{math}\mathbf{\hat{r}}\end{math}はr方向の単位ベクトルである。\\
+ここで,
+
+\begin{align*}
+  \nabla A_z \cdot \mathbf{\hat{r}} = \mathbf{\hat{r}} \frac{\partial A_z}{\partial r} \cdot \mathbf{\hat{r}} = -(1+jkr)C_1\frac{e^{-jkr}}{r^2}
+\end{align*}
+
+を式(6)に代入すると,
+
+\begin{align}
+  \int_{0}^{2\pi}\int_{0}^{\pi} -(1+jkr_0)C_1\frac{e^{-jkr}}{r^{2}_0} r_{0}^2\sin \theta \,d\theta\,d\phi = -k^2 \int_{V}A_z dV -\mu\int_{V} J_z dV\notag\\
+  (1+jkr_0)C_1e^{-jkr}\int_{0}^{\pi} \sin \theta \,d\theta \int_{0}^{2\pi}\,d\phi = k^2 \int_{V}A_z dV + \mu\int_{V} J_z dV\notag\\
+  4\pi(1+jkr_0)C_1 e^{-jkr_0} = k^2 \int_{V}A_z dV + \mu\int_{V} J_z dV
+\end{align}
+
+ここで、体積積分は微小体積によって行われ、また、電流密度の体積積分は\begin{math}Idl\end{math}
+に収束するので。\\
+式(7)は,
+
+\begin{align*}
+  4\pi C_1 = \mu Idl\\
+  C_1 = \frac{\mu Idl}{4\pi}
+\end{align*}
+
+よって、
+
+\begin{align*}
+  A_z = \mu Idl\frac{e^{-jkr}}{4\pi r}
+\end{align*}
+
+この式を,
+
+\begin{align}
+  \mathbf{B} &= \mu\mathbf{H}\notag\\
+  \mathbf{H} &= \frac{1}{\mu}\mathbf{B}\notag\\
+  &= \frac{1}{\mu}\nabla \times \mathbf{A}
+\end{align}
+に適応する。\\
+まず、z成分方向だけを持つベクトルポテンシャルを球座標系で表すと、
+\begin{math}\mathbf{\hat{r}},\boldsymbol{\hat{\theta}}
+をr方向および\theta 方向の単位ベクトルとし\end{math}
+
+\begin{align*}
+    \mathbf{A} = \mu Idl\frac{e^{-jkr}}{4\pi r}(\mathbf{\hat{r}}\cos\theta - \boldsymbol{\hat{\theta}}\sin\theta)
+\end{align*}
+
+となり、これを式(8)に代入すると。
+
+\begin{align*}
+  \mathbf{H} &= \frac{1}{\mu}\nabla\times \{ \mu Idl\frac{e^{-jkr}}{4\pi r}(\mathbf{\hat{r}}\cos\theta - \boldsymbol{\hat{\theta}}\sin\theta)\} \\
+  &= \frac{Idl}{4\pi}\{\nabla\times\frac{e^{-jkr}}{r}\mathbf{\hat{r}}\cos\theta - \nabla\times\frac{e^{-jkr}}{r}\boldsymbol{\hat{\theta}}\sin\theta\} \\
+  &= \frac{Idl}{4\pi}(-\frac{1}{r}\frac{\partial}{\partial r}e^{-jkr}\sin\theta - \frac{1}{r}\frac{\partial}{\partial\theta}\frac{e^{-jkr}}{r}\cos\theta)\\
+  &= \frac{Idl}{4\pi}(\frac{jk}{r}e^{-jkr}\sin\theta + \frac{e^{-jkr}}{r^2}\sin\theta)\\
+  &= \frac{Idl\sin\theta}{4\pi}(\frac{jk}{r}+\frac{1}{r^2})e^{-jkr}
+\end{align*}
+
+よって,
+
+\begin{align}
+  \mathbf{H}_\phi = \frac{Idl\sin\theta}{4\pi}(\frac{jk}{r}+\frac{1}{r^2})e^{-jkr}
+\end{align}
+
+電磁界の双対性により、微小磁気ダイポールの電磁界は、微小電気ダイポールの電磁界に対して\\
+\begin{math}
+  Idl\rightarrow j\omega\mu\pi a^2 I , \mathbf{H} \rightarrow -\mathbf{E} , \epsilon \rightarrow \mu
+\end{math}
+と置き換えることで求められるので、式(9)にこれを適応すると。
+
+\begin{align}
+  \mathbf{E}_\phi = -\frac{j\omega\mu I\pi a^2 \sin\theta}{4\pi}(\frac{jk}{r}+\frac{1}{r^2})e^{-jkr}
+\end{align}
+
+\end{document}
+
