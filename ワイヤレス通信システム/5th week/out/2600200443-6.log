@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p3.9.0-u1.27-210218-2.6 (utf8.uptex) (TeX Live 2021) (preloaded format=uplatex 2021.10.19)  29 MAY 2022 19:08
+This is e-upTeX, Version 3.141592653-p3.9.0-u1.27-210218-2.6 (utf8.uptex) (TeX Live 2021) (preloaded format=uplatex 2021.10.19)  30 MAY 2022 03:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -488,19 +488,46 @@ LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
 (Font)              scaled to size 13.31541pt on input line 38.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 (Font)              scaled to size 13.31541pt on input line 38.
+LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
+(Font)              scaled to size 6.47278pt on input line 39.
+LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
+(Font)              scaled to size 4.62341pt on input line 39.
+LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
+(Font)              scaled to size 11.09619pt on input line 57.
+LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
+(Font)              scaled to size 11.09619pt on input line 57.
+File: week4_1.jpg Graphic file (type bmp)
+<week4_1.jpg>
+LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
+(Font)              scaled to size 8.32214pt on input line 65.
+LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
+(Font)              scaled to size 8.32214pt on input line 65.
+File: week4_2.jpg Graphic file (type bmp)
+<week4_2.jpg>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 [1]
+File: week4_3.jpg Graphic file (type bmp)
+<week4_3.jpg>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: week4_4.jpg Graphic file (type bmp)
+<week4_4.jpg>
+[2] [3]
 
 LaTeX3 Info: Redefining command \BeforeClosingMainAux with sig. 'm' on line
-(LaTeX3)     42.
+(LaTeX3)     124.
 
 (out/2600200443-6.aux) ) 
 Here is how much of TeX's memory you used:
- 7915 strings out of 479460
- 120724 string characters out of 5870463
- 464019 words of memory out of 5000000
- 25458 multiletter control sequences out of 15000+600000
- 413616 words of font info for 80 fonts, out of 8000000 for 9000
+ 7952 strings out of 479460
+ 121258 string characters out of 5870463
+ 472015 words of memory out of 5000000
+ 25482 multiletter control sequences out of 15000+600000
+ 416851 words of font info for 96 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 97i,6n,102p,838b,264s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 97i,9n,102p,838b,329s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on out/2600200443-6.dvi (2 pages, 1472 bytes).
+Output written on out/2600200443-6.dvi (4 pages, 6024 bytes).

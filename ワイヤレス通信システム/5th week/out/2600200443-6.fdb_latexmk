@@ -1,16 +1,18 @@
 # Fdb version 3
-["dvipdf"] 1653818892 "out/2600200443-6.dvi" "out/2600200443-6.pdf" "out/2600200443-6" 1653818892
-  "out/2600200443-6.dvi" 1653818892 1472 80aa1518c089d25f992c326aca97f359 "latex"
+["dvipdf"] 1653849396 "out/2600200443-6.dvi" "out/2600200443-6.pdf" "out/2600200443-6" 1653849397
+  "out/2600200443-6.dvi" 1653849396 6024 e234daef58db596f185bfdfc69a4120d "latex"
   (generated)
   "out/2600200443-6.pdf"
-["latex"] 1653818891 "/Users/kyoheiyamashita/VSCode/LaTex/ワイヤレス通信システム/5th week/2600200443-6.tex" "out/2600200443-6.dvi" "2600200443-6" 1653818892
-  "/Users/kyoheiyamashita/VSCode/LaTex/ワイヤレス通信システム/5th week/2600200443-6.tex" 1653818890 933 c4558c98a4358d01e846978453442b2c ""
+["latex"] 1653849395 "/Users/kyoheiyamashita/VSCode/LaTex/ワイヤレス通信システム/5th week/2600200443-6.tex" "out/2600200443-6.dvi" "2600200443-6" 1653849397
+  "/Users/kyoheiyamashita/VSCode/LaTex/ワイヤレス通信システム/5th week/2600200443-6.tex" 1653849395 3152 1d2fca55518f0570a7bec871b76bd6e0 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
+  "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm" 1246382020 924 9904cf1d39e9767e7a3622f2a125a565 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm" 1246382020 928 2dc8d444221b7a635bb58038579b861a ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm" 1246382020 908 2921f8a10601f252058503cc6570e581 ""
+  "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm" 1246382020 940 75ac932a52f80982a9f8ea75d03a34cf ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1246382020 940 228d6584342e91276bf566bcf9716b83 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/ascmac/ascgrp.tfm" 1520635638 448 9a1f3a95c3a7e2681aa6eefcf410b7ac ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmex10.tfm" 1136768653 992 662f679a0b3d2d53c1b94050fdaa3f50 ""
@@ -21,6 +23,7 @@
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmr17.tfm" 1136768653 1292 296a67155bdbfc32aa9c636f21e91433 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmr6.tfm" 1136768653 1300 b62933e007d01cfd073f79b963c01526 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmr8.tfm" 1136768653 1292 21c1c5bfeaebccffdb478fd231a0997d ""
+  "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmr9.tfm" 1136768653 1292 6b21b9c2c7bebb38aa2273f7ca0fb3af ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmss12.tfm" 1136768653 1324 37b971caf729d7edd9cbb9f9b0ea76eb ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1136768653 1124 6c73e740cf17375f03eec0ee63599741 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
@@ -90,15 +93,19 @@
   "/usr/local/texlive/2021/texmf-dist/web2c/texmf.cnf" 1616443989 39972 3d6bb4d9d719e93193fa020b58adf5d4 ""
   "/usr/local/texlive/2021/texmf-var/web2c/euptex/uplatex.fmt" 1634580989 2693213 a5600cf617714c164985f4b53eac95a0 ""
   "/usr/local/texlive/2021/texmf.cnf" 1616695596 577 4c1911a7228e554c6032256d3cf5567d ""
-  "2600200443-6.tex" 1653818890 933 c4558c98a4358d01e846978453442b2c ""
+  "2600200443-6.tex" 1653849395 3152 1d2fca55518f0570a7bec871b76bd6e0 ""
   "eclbkbox.sty" 1653749409 2337 ff4a8f2b244313eda7f0038675da9380 ""
   "emathC.sty" 1653749409 77169 fa45d20ced8a097513511a68a117cf4e ""
   "itembbox.sty" 1653749409 20708 1dd02f085efa8613728dbae35ff0abb0 ""
   "itembkbx.sty" 1653749409 22720 bbab96bb7bfd034a475da5c68e57cff3 ""
   "jquote.sty" 1653749409 4511 aa98621bc9692a3c1c2bae2d9ad99c05 ""
-  "out/2600200443-6.aux" 1653818892 208 48ab785a4ae89d7c0dd222cdbe91e7da "latex"
+  "out/2600200443-6.aux" 1653849396 1121 3bfcaf61209e0083ec9ae1702167469c "latex"
   "plistings.sty" 1653749409 12306 206228c3a0b473bd4a0a72179299b42a ""
+  "week4_1.jpg" 1653818479 73955 5f99a046421c92ccf4562e9467054393 ""
+  "week4_2.jpg" 1653818588 74598 9b9cefd743cf7ee604c5ada27d733237 ""
+  "week4_3.jpg" 1653818681 78590 a6dc04e55022110a963e502e44c7aec9 ""
+  "week4_4.jpg" 1653818816 71491 fbd25aeae2b46180a3e42a72aceeb0e9 ""
   (generated)
   "out/2600200443-6.dvi"
-  "out/2600200443-6.log"
   "out/2600200443-6.aux"
+  "out/2600200443-6.log"
