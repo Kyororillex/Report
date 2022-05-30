@@ -572,4 +572,34 @@ INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisg-v.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisg-h.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmss12.tfm
+INPUT ./pic1-1.png
+INPUT ./pic1-1.png
+INPUT pic1-1.png
+INPUT extractbb -B cropbox -O pic1-1.png
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisr-v.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisr-h.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmr9.tfm
+INPUT ./pic1-2.png
+INPUT ./pic1-2.png
+INPUT pic1-2.png
+INPUT extractbb -B cropbox -O pic1-2.png
+INPUT ./pic2.png
+INPUT ./pic2.png
+INPUT pic2.png
+INPUT extractbb -B cropbox -O pic2.png
+INPUT ./pic2.png
+INPUT ./pic2.png
+INPUT pic2.png
+INPUT ./pic3.png
+INPUT ./pic3.png
+INPUT pic3.png
+INPUT extractbb -B cropbox -O pic3.png
+INPUT ./pic4.png
+INPUT ./pic4.png
+INPUT pic4.png
+INPUT extractbb -B cropbox -O pic4.png
+INPUT ./pic5.png
+INPUT ./pic5.png
+INPUT pic5.png
+INPUT extractbb -B cropbox -O pic5.png
 INPUT out/2600200443-6.aux
