@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p3.9.0-u1.27-210218-2.6 (utf8.uptex) (TeX Live 2021) (preloaded format=uplatex 2021.10.19)  30 MAY 2022 18:23
+This is e-upTeX, Version 3.141592653-p3.9.0-u1.27-210218-2.6 (utf8.uptex) (TeX Live 2021) (preloaded format=uplatex 2021.10.19)  1 JUN 2022 03:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -472,54 +472,52 @@ LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
 (Font)              scaled to size 13.31541pt on input line 35.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 (Font)              scaled to size 13.31541pt on input line 35.
+LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
+(Font)              scaled to size 11.09619pt on input line 37.
+LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
+(Font)              scaled to size 11.09619pt on input line 37.
 File: pic1-1.png Graphic file (type bmp)
 <pic1-1.png>
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 44.
+(Font)              scaled to size 8.32214pt on input line 49.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 8.32214pt on input line 44.
+(Font)              scaled to size 8.32214pt on input line 49.
 File: pic1-2.png Graphic file (type bmp)
 <pic1-2.png>
 
-Overfull \hbox (37.91357pt too wide) in paragraph at lines 48--49
+Overfull \hbox (37.91357pt too wide) in paragraph at lines 53--54
  [] 
  []
 
 File: pic2.png Graphic file (type bmp)
 <pic2.png>
+[1]
 File: pic2.png Graphic file (type bmp)
 <pic2.png>
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 File: pic3.png Graphic file (type bmp)
 <pic3.png>
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
+LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
+(Font)              scaled to size 9.24683pt on input line 97.
+LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
+(Font)              scaled to size 9.24683pt on input line 97.
+[2]
 File: pic4.png Graphic file (type bmp)
 <pic4.png>
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 File: pic5.png Graphic file (type bmp)
 <pic5.png>
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[1] [2] [3]
+[3]
 
 LaTeX3 Info: Redefining command \BeforeClosingMainAux with sig. 'm' on line
-(LaTeX3)     95.
+(LaTeX3)     150.
 
 (out/2600200443-6.aux) ) 
 Here is how much of TeX's memory you used:
- 7449 strings out of 479460
- 115821 string characters out of 5870463
- 465535 words of memory out of 5000000
- 24994 multiletter control sequences out of 15000+600000
- 412967 words of font info for 77 fonts, out of 8000000 for 9000
+ 7454 strings out of 479460
+ 115879 string characters out of 5870463
+ 467535 words of memory out of 5000000
+ 24997 multiletter control sequences out of 15000+600000
+ 414488 words of font info for 84 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  97i,6n,102p,845b,413s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on out/2600200443-6.dvi (4 pages, 3360 bytes).
+Output written on out/2600200443-6.dvi (4 pages, 7948 bytes).
