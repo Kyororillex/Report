@@ -1,0 +1,86 @@
+\documentclass[dvipdfmx,autodetect-engine,titlepage]{jsarticle}
+\usepackage[dvipdfm]{graphicx}
+\usepackage{ascmac}
+\usepackage{fancybox}
+\usepackage{listings}
+\usepackage{plistings}
+\usepackage{itembkbx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{svg}
+\usepackage{url}
+\usepackage{graphics}
+\usepackage{multirow}
+\usepackage{listings,jvlisting}
+
+\textheight=23cm
+\renewcommand{\figurename}{図}
+\renewcommand{\tablename}{表}
+\newenvironment{code}
+{\vspace{0.5zw}\VerbatimEnvironment  
+\begin{screen} 
+\baselineskip=1.0\normalbaselineskip
+ \begin{Verbatim}}
+{\end{Verbatim}
+\baselineskip=\normalbaselineskip
+ \end{screen}\vspace{0.5zw}} 
+
+\title{情報理工学部　SNコース 3回\\
+リレーショナルデータベースにおけるモデリング\\}
+\author{2600200443-6\\Yamashita Kyohei\\山下 恭平}
+\date{Jun 19 2022}
+
+\begin{document}
+
+\maketitle
+
+\section{データベースについて}
+
+問題文中で与えられた表は、Exel的に表現おり、元のリレーショナルデータベースとは
+異なる形をしているので、元の形に一度戻してみると、以下のようになると考えられる。
+\begin{table}[h]
+  \centering
+  \begin{tabular}{cccccrrr}
+  \hline
+  \multicolumn{1}{|c|}{顧客ID}                  & \multicolumn{1}{c|}{顧客名}                   & \multicolumn{1}{c|}{所在地}                  & \multicolumn{1}{c|}{商品ID} & \multicolumn{1}{c|}{商品名}    & \multicolumn{1}{l|}{単価}  & \multicolumn{1}{l|}{個数}  & \multicolumn{1}{l|}{価格合計}                   \\ \hline\hline
+  \multicolumn{1}{|c|}{A001}                  & \multicolumn{1}{c|}{大津電子}                  & \multicolumn{1}{c|}{大津市}                  & \multicolumn{1}{c|}{1010} & \multicolumn{1}{c|}{3mm ネジ} & \multicolumn{1}{r|}{10}  & \multicolumn{1}{r|}{300} & \multicolumn{1}{r|}{3000}                   \\ \hline
+  \multicolumn{1}{|c|}{A001}                  & \multicolumn{1}{c|}{大津電子}                  & \multicolumn{1}{c|}{大津市}                  & \multicolumn{1}{c|}{1011} & \multicolumn{1}{c|}{丸形プラグ}  & \multicolumn{1}{r|}{200} & \multicolumn{1}{r|}{150} & \multicolumn{1}{r|}{30000}                  \\ \hline
+  \multicolumn{1}{|c|}{A002}                  & \multicolumn{1}{c|}{草津精工}                  & \multicolumn{1}{c|}{草津市}                  & \multicolumn{1}{c|}{1010} & \multicolumn{1}{c|}{3mm ネジ} & \multicolumn{1}{r|}{10}  & \multicolumn{1}{r|}{200} & \multicolumn{1}{r|}{2000}                   \\ \hline
+  \multicolumn{1}{|c|}{A002}                  & \multicolumn{1}{c|}{草津精工}                  & \multicolumn{1}{c|}{草津市}                  & \multicolumn{1}{c|}{1011} & \multicolumn{1}{c|}{丸形プラグ}  & \multicolumn{1}{r|}{200} & \multicolumn{1}{r|}{120} & \multicolumn{1}{r|}{24000}                  \\ \hline
+  \multicolumn{1}{|c|}{A002}                  & \multicolumn{1}{c|}{草津精工}                  & \multicolumn{1}{c|}{草津市}                  & \multicolumn{1}{c|}{1045} & \multicolumn{1}{c|}{5m 銅線}  & \multicolumn{1}{r|}{500} & \multicolumn{1}{r|}{50}  & \multicolumn{1}{r|}{25000}                  \\ \hline
+  \multicolumn{1}{l}{}                        & \multicolumn{1}{l}{}                       & \multicolumn{1}{l}{}                      & \multicolumn{1}{l}{}      & \multicolumn{1}{l}{}        & \multicolumn{1}{l}{}     & \multicolumn{1}{l}{}     & \multicolumn{1}{l}{}                        \\
+                                              &                                            & \multicolumn{3}{c}{↓Exelなどによるセル結合}                                                                  & \multicolumn{1}{l}{}     & \multicolumn{1}{l}{}     & \multicolumn{1}{l}{}                        \\
+                                              &                                            &                                           &                           &                             &                          &                          &                                             \\ \hline
+  \multicolumn{1}{|c|}{顧客ID}                  & \multicolumn{1}{c|}{顧客名}                   & \multicolumn{1}{c|}{所在地}                  & \multicolumn{1}{c|}{商品ID} & \multicolumn{1}{c|}{商品名}    & \multicolumn{1}{l|}{単価}  & \multicolumn{1}{l|}{個数}  & \multicolumn{1}{l|}{価格合計}                   \\ \hline\hline
+  \multicolumn{1}{|c|}{\multirow{2}{*}{A001}} & \multicolumn{1}{c|}{\multirow{2}{*}{大津電子}} & \multicolumn{1}{c|}{\multirow{2}{*}{大津市}} & \multicolumn{1}{c|}{1010} & \multicolumn{1}{c|}{3mm ネジ} & \multicolumn{1}{r|}{10}  & \multicolumn{1}{r|}{300} & \multicolumn{1}{r|}{\multirow{2}{*}{33000}} \\ \cline{4-7}
+  \multicolumn{1}{|c|}{}                      & \multicolumn{1}{c|}{}                      & \multicolumn{1}{c|}{}                     & \multicolumn{1}{c|}{1011} & \multicolumn{1}{c|}{丸形プラグ}  & \multicolumn{1}{r|}{200} & \multicolumn{1}{r|}{150} & \multicolumn{1}{r|}{}                       \\ \hline
+  \multicolumn{1}{|c|}{\multirow{3}{*}{A002}} & \multicolumn{1}{c|}{\multirow{3}{*}{草津精工}} & \multicolumn{1}{c|}{\multirow{3}{*}{草津市}} & \multicolumn{1}{c|}{1010} & \multicolumn{1}{c|}{3mm ネジ} & \multicolumn{1}{r|}{10}  & \multicolumn{1}{r|}{200} & \multicolumn{1}{r|}{\multirow{3}{*}{51000}} \\ \cline{4-7}
+  \multicolumn{1}{|c|}{}                      & \multicolumn{1}{c|}{}                      & \multicolumn{1}{c|}{}                     & \multicolumn{1}{c|}{1011} & \multicolumn{1}{c|}{丸形プラグ}  & \multicolumn{1}{r|}{200} & \multicolumn{1}{r|}{120} & \multicolumn{1}{r|}{}                       \\ \cline{4-7}
+  \multicolumn{1}{|c|}{}                      & \multicolumn{1}{c|}{}                      & \multicolumn{1}{c|}{}                     & \multicolumn{1}{c|}{1045} & \multicolumn{1}{c|}{5m 銅線}  & \multicolumn{1}{r|}{500} & \multicolumn{1}{r|}{50}  & \multicolumn{1}{r|}{}                       \\ \hline
+  \end{tabular}
+  \end{table}
+
+この課題では、セル結合前の表をもとに考えることにする。
+
+\section{どのような関数従属性が存在しているか}
+
+\begin{align*}
+  顧客ID \longrightarrow 顧客名 , 所在地 \\
+  商品ID \longrightarrow 商品名 , 単価 \\
+  顧客ID , 商品ID \longrightarrow 個数 , 合計価格
+\end{align*}
+
+\section{キーは何か}
+
+\section{どの正規化のレベルを満たしているか}
+
+\section{BCNFになるように分解せよ}
+
+\section{BCNF に分解したあとのリレーションを利用して，「単価が 200 円以上の商品を販売した顧客の顧客名」を
+得る問い合わせを高速に実行できるようにするには，どのリレーションのどの属性にどのような索引を構築
+すればよいか。}
+
+\section{「合計価格」の冗長性と、それに伴い発生する可能性の不整合についての検討}
+
+\end{document}
