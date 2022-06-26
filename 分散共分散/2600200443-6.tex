@@ -1,0 +1,56 @@
+\documentclass[dvipdfmx,autodetect-engine,titlepage]{jsarticle}
+\usepackage[dvipdfm]{graphicx}
+\usepackage{ascmac}
+\usepackage{fancybox}
+\usepackage{listings}
+\usepackage{plistings}
+\usepackage{itembkbx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{svg}
+\usepackage{url}
+\usepackage{graphics}
+\usepackage{multirow}
+\usepackage{listings,jvlisting}
+
+\textheight=23cm
+\renewcommand{\figurename}{図}
+\renewcommand{\tablename}{表}
+\newenvironment{code}
+{\vspace{0.5zw}\VerbatimEnvironment  
+\begin{screen} 
+\baselineskip=1.0\normalbaselineskip
+ \begin{Verbatim}}
+{\end{Verbatim}
+\baselineskip=\normalbaselineskip
+ \end{screen}\vspace{0.5zw}} 
+
+\title{情報理工学部　SNコース 3回\\
+第一回レポート(分散と共分散)\\}
+\author{2600200443-6\\Yamashita Kyohei\\山下 恭平}
+\date{Jun 23 2022}
+
+\begin{document}
+
+\maketitle
+
+\section{}
+
+以下の式を証明する。
+
+\begin{align*}
+  Cov(x+y,z) &= Cov(x,z) + Cov(y,z)\\
+\end{align*}
+
+右辺より
+
+\begin{align*}
+Cov(x,z) + Cov(y,z) &= \frac{1}{n}\sum (x_{n}-\bar{x})(z_{n}-\bar{z}) + \frac{1}{n}\sum (y_{n}-\bar{y})(z_{n}-\bar{z})\\
+&= \frac{1}{n}\sum (x_{n}-\bar{x}+y_{n}-\bar{y})(z_{n}-\bar{z})\\
+&= \frac{1}{n}\sum \{ (x_{n}+y_{n})-(\bar{x}+\bar{y})\} (z_{n}-\bar{z})\\
+&= Cov(x+y,z) = 左辺
+\end{align*}
+
+
+\end{document}
