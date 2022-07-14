@@ -1,0 +1,137 @@
+\documentclass[dvipdfmx,autodetect-engine,titlepage]{jsarticle}
+\usepackage[dvipdfm]{graphicx}
+\usepackage{ascmac}
+\usepackage{fancybox}
+\usepackage{listings}
+\usepackage{plistings}
+\usepackage{itembkbx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{svg}
+\usepackage{url}
+\usepackage{graphics}
+\usepackage{listings,jvlisting}
+
+\lstset{
+  basicstyle={\ttfamily},
+  identifierstyle={\small},
+  commentstyle={\smallitshape},
+  keywordstyle={\small\bfseries},
+  ndkeywordstyle={\small},
+  stringstyle={\small\ttfamily},
+  frame={tb},
+  breaklines=true,
+  columns=[l]{fullflexible},
+  numbers=left,
+  xrightmargin=0zw,
+  xleftmargin=3zw,
+  numberstyle={\scriptsize},
+  stepnumber=1,
+  numbersep=1zw,
+  lineskip=-0.5ex
+}
+
+\textheight=23cm
+\renewcommand{\figurename}{図}
+\renewcommand{\tablename}{表}
+\newenvironment{code}
+{\vspace{0.5zw}\VerbatimEnvironment  
+\begin{screen} 
+\baselineskip=1.0\normalbaselineskip
+ \begin{Verbatim}}
+{\end{Verbatim}
+\baselineskip=\normalbaselineskip
+ \end{screen}\vspace{0.5zw}} 
+
+\title{情報理工学部　SNコース 3回\\
+ワイヤレス通信システム\\
+11th Week レポート}
+\author{2600200443-6\\Yamashita Kyohei\\山下 恭平}
+\date{Jul 10 2022}
+
+\begin{document}
+
+\maketitle
+
+\section{4章 演習問題 問2}
+
+\begin{align}
+  V_1 = Z_{11}I_1 + Z_{12}I_2 + Z_{13}I_2 \\
+  0 = Z_{21}I_1 + Z_{22}I_2 + Z_{23}I_2 \\
+  0 = Z_{31}I_1 + Z_{32}I_2 + Z_{33}I_2 
+\end{align}
+
+(1)(2)(3)の両辺を\begin{math} I_1\end{math}で割ると
+
+\begin{align}
+  Z_{in} = \frac{V_1}{I_1} = Z_{11} + \frac{I_2}{I_1}Z_{12} + \frac{I_3}{I_1}Z_{13}\\
+  Z_{21} + \frac{I_2}{I_1}Z_{22} + \frac{I_3}{I_1}Z_{23} = 0\\
+  Z_{31} + \frac{I_2}{I_1}Z_{32} + \frac{I_3}{I_1}Z_{33} = 0
+\end{align}
+
+(4)(5)(6)において
+\begin{align*}
+  Z_{21} = Z_{12}\\
+  Z_{31} = Z_{13}\\
+  Z_{32} = Z_{23}
+\end{align*}
+であり、\begin{math}\frac{I_2}{I_1} = A , \frac{I_3}{I_1} = B\end{math}とすると
+
+\begin{align}
+  Z_{in} = Z_{11} + AZ_{12} + BZ_{13}\\
+  Z_{12} + AZ_{22} + BZ_{23} = 0\\
+  Z_{13} + AZ_{23} + BZ_{33} = 0
+\end{align}
+
+となる、よって式(8)(9)を解けば良い。\\
+式(8)より
+
+\begin{align}
+  B = - \frac{Z_{12} + AZ_{22}}{Z_{23}}
+\end{align}
+
+(10)を(9)に代入すると
+
+\begin{align}
+  Z_{13} + AZ_{23} - \frac{Z_{12} + AZ_{22}}{Z_{23}}Z_{33} = 0\notag\\ 
+  (Z_{23} - \frac{Z_{22}Z_{33}}{Z_{23}})A = \frac{Z_{12}Z_{33}}{Z_{23}} - Z_{13}\notag\\
+  A = \frac{Z_{12}Z_{33}-Z_{13}Z_{23}}{Z_{23}^2-Z_{22}Z_{33}}
+\end{align}
+
+(10)と(11)より
+
+\begin{align}
+  B &= -\frac{Z_{12}}{Z_{23}} - \frac{Z_{22}}{Z_{23}}(\frac{Z_{12}Z_{33} - Z_{13}Z_{23}}{Z_{23}^2 - Z_{22}Z_{33}})\notag\\
+  &= -\frac{1}{Z_{23}}(Z_{12} + \frac{Z_{12}Z_{22}Z_{33} - Z_{13}Z_{22}Z_{23}}{Z_{23}^2 - Z_{22}Z_{33}})\notag\\
+  &= -\frac{Z_{12}Z_{23} - Z_{13}Z_{22}}{Z_{23}^2 - Z_{22}Z_{33}}
+\end{align}
+
+(7)(11)(12)より
+
+\begin{align*}
+  Z_{in} &= Z_{11} + \frac{Z_{12}Z_{33}-Z_{13}Z_{23}}{Z_{23}^2-Z_{22}Z_{33}}Z_{12} - \frac{Z_{12}Z_{23} - Z_{13}Z_{22}}{Z_{23}^2 - Z_{22}Z_{33}}Z_{13}\\
+  &= Z_{11} + \frac{Z_{12}^2Z_{33} + Z_{13}^2Z_{22} - 2Z_{12}Z_{13}Z_{23}}{Z_{23}^2-Z_{22}Z_{33}}
+\end{align*}
+
+\section{4章 演習問題 問3}
+
+軸比が1の時、円編波となるので
+
+\begin{align*}
+  |E_{\theta} \vert = |E_{\phi} \vert
+\end{align*}
+
+教科書式(4・13)より
+
+\begin{align*}
+  \lambda S &= 2\pi^{2}a^2\\
+  S &= \frac{2\pi^{2}a^2}{\lambda}\\
+  &= \frac{2 \times 3.1415 \times 4.5}{\frac{299792458}{1100}}\\
+  &= 1.46
+\end{align*}
+
+よって、ピッチSが1.46mmの時、円偏波となる。
+
+\end{document}
+
