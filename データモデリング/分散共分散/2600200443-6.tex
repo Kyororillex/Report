@@ -1,0 +1,112 @@
+\documentclass[dvipdfmx,autodetect-engine,titlepage]{jsarticle}
+\usepackage[dvipdfm]{graphicx}
+\usepackage{ascmac}
+\usepackage{fancybox}
+\usepackage{listings}
+\usepackage{plistings}
+\usepackage{itembkbx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{svg}
+\usepackage{url}
+\usepackage{graphics}
+\usepackage{multirow}
+\usepackage{listings,jvlisting}
+
+\textheight=23cm
+\renewcommand{\figurename}{図}
+\renewcommand{\tablename}{表}
+\newenvironment{code}
+{\vspace{0.5zw}\VerbatimEnvironment  
+\begin{screen} 
+\baselineskip=1.0\normalbaselineskip
+ \begin{Verbatim}}
+{\end{Verbatim}
+\baselineskip=\normalbaselineskip
+ \end{screen}\vspace{0.5zw}} 
+
+\title{情報理工学部　SNコース 3回\\
+第三回レポート(ラグランジュの未定乗数法)\\}
+\author{2600200443-6\\Yamashita Kyohei\\山下 恭平}
+\date{Jul 14 2022}
+
+\begin{document}
+
+\maketitle
+
+\section*{問題}
+
+ラグランジュの未定乗数法を用い，周囲の長さが定数 L の長方形で．面積最大
+のものは正方形であることを証明せよ．
+
+\subsection*{問1 長方形の2辺をx, yとする.最大にするべき目的関数 f(x,y) を示せ．}
+
+長方形の面積を求めれば良いので.
+
+\begin{align}
+  f(x,y) = xy
+\end{align}
+
+\subsection*{問2 長方形の2辺x, yが満たすべき制約式を示せ.}
+
+長方形の全長がLであるので,満たすべき制約条件は.
+
+\begin{align}
+  2(x+y) = L
+\end{align}
+
+\subsection*{問3 Lagrange の未定乗数をλとして, x, y.λで偏微分するべき式をF(x, y, λ)で表わせ．}
+
+(2)より,g(x,y)は
+
+\begin{align}
+  g(x,y) = 2(x+y) - L
+\end{align}
+
+となるので,求める式は(1),(3)より.
+
+\begin{align}
+  F(x,y,\lambda) &= f + \lambda g \notag\\
+  &= xy + \lambda(2x+2y-L)
+\end{align}
+
+\subsection*{問4 式 F(x, y, λ)を x, y.λで偏微分し,その結果が0 とおいた方程式を書け．}
+
+(4)について,x,y,\begin{math}\lambda\end{math}それぞれで偏微分を行うと.
+
+\begin{align}
+  \frac{\partial}{\partial x}F(x,y,\lambda) &= 0\notag\\
+  y + 2\lambda &= 0
+\end{align}
+
+\begin{align}
+  \frac{\partial}{\partial y}F(x,y,\lambda) &= 0\notag\\
+  x + 2\lambda &= 0
+\end{align}
+
+\begin{align}
+  \frac{\partial}{\partial \lambda}F(x,y,\lambda) &= 0\notag\\
+  2x + 2y - L &= 0
+\end{align}
+
+
+\subsection*{問5 偏微分した結果が0 に等しいとき, x, yの関係を示せ.}
+
+(5),(6),(7)よりx,yの関係は
+
+\begin{align}
+  x = y
+\end{align}
+
+ただし,
+
+\begin{align*}
+  x + y = \frac{L}{2}
+\end{align*}
+
+を満たす.\\
+(8)より,周囲の長さが定数 L の長方形で．面積最大のものは正方形であることが
+示された.
+
+\end{document}
