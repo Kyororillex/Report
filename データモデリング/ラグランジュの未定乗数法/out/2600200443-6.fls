@@ -1,10 +1,10 @@
-PWD /Users/kyoheiyamashita/VSCode/LaTex/データモデリング copy
+PWD /Users/kyoheiyamashita/VSCode/LaTex/データモデリング/分散共分散
 INPUT /usr/local/texlive/2021/texmf.cnf
 INPUT /usr/local/texlive/2021/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2021/texmf.cnf
 INPUT /usr/local/texlive/2021/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2021/texmf-var/web2c/euptex/uplatex.fmt
-INPUT /Users/kyoheiyamashita/VSCode/LaTex/データモデリング copy/2600200443-6.tex
+INPUT /Users/kyoheiyamashita/VSCode/LaTex/データモデリング/分散共分散/2600200443-6.tex
 OUTPUT out/2600200443-6.log
 INPUT /usr/local/texlive/2021/texmf-dist/tex/platex/jsclasses/jsarticle.cls
 INPUT /usr/local/texlive/2021/texmf-dist/tex/platex/jsclasses/jsarticle.cls
@@ -617,6 +617,9 @@ OUTPUT out/2600200443-6.dvi
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisr-v.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisr-h.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisg-v.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisg-h.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmss12.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisg-v.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisg-h.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmss12.tfm

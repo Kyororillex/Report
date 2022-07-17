@@ -1,9 +1,9 @@
-This is e-upTeX, Version 3.141592653-p3.9.0-u1.27-210218-2.6 (utf8.uptex) (TeX Live 2021) (preloaded format=uplatex 2021.10.19)  23 JUN 2022 14:44
+This is e-upTeX, Version 3.141592653-p3.9.0-u1.27-210218-2.6 (utf8.uptex) (TeX Live 2021) (preloaded format=uplatex 2021.10.19)  14 JUL 2022 16:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**"/Users/kyoheiyamashita/VSCode/LaTex/データモデリング copy/2600200443-6.tex"
-(/Users/kyoheiyamashita/VSCode/LaTex/データモデリング copy/2600200443-6.tex
+**/Users/kyoheiyamashita/VSCode/LaTex/データモデリング/分散共分散/2600200443-6.tex
+(/Users/kyoheiyamashita/VSCode/LaTex/データモデリング/分散共分散/2600200443-6.tex
 pLaTeX2e <2020-10-01u04>+2 (based on LaTeX2e <2020-10-01> patch level 4)
 L3 programming layer <2021-02-18> (/usr/local/texlive/2021/texmf-dist/tex/platex/jsclasses/jsarticle.cls
 Document Class: jsarticle 2020/10/09 jsclasses (okumura, texjporg)
@@ -494,23 +494,27 @@ LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
 (Font)              scaled to size 13.31541pt on input line 38.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 (Font)              scaled to size 13.31541pt on input line 38.
+LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
+(Font)              scaled to size 11.09619pt on input line 43.
+LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
+(Font)              scaled to size 11.09619pt on input line 43.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 42.
+(Font)              scaled to size 6.47278pt on input line 47.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 4.62341pt on input line 42.
-[1]
+(Font)              scaled to size 4.62341pt on input line 47.
+[1] [2]
 
 LaTeX3 Info: Redefining command \BeforeClosingMainAux with sig. 'm' on line
-(LaTeX3)     56.
+(LaTeX3)     112.
 
 (out/2600200443-6.aux) ) 
 Here is how much of TeX's memory you used:
- 7984 strings out of 479460
- 121713 string characters out of 5870463
- 469868 words of memory out of 5000000
- 25521 multiletter control sequences out of 15000+600000
- 415671 words of font info for 90 fonts, out of 8000000 for 9000
+ 7985 strings out of 479460
+ 121759 string characters out of 5870463
+ 473874 words of memory out of 5000000
+ 25522 multiletter control sequences out of 15000+600000
+ 416265 words of font info for 93 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 97i,9n,102p,825b,264s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 97i,8n,102p,834b,264s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on out/2600200443-6.dvi (2 pages, 2632 bytes).
+Output written on out/2600200443-6.dvi (3 pages, 4444 bytes).
