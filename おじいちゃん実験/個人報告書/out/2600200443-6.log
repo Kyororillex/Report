@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.141592653-p3.9.0-u1.27-210218-2.6 (utf8.uptex) (TeX Live 2021) (preloaded format=uplatex 2021.10.19)  17 JUL 2022 18:35
+This is e-upTeX, Version 3.141592653-p3.9.0-u1.27-210218-2.6 (utf8.uptex) (TeX Live 2021) (preloaded format=uplatex 2021.10.19)  20 JUL 2022 05:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -476,21 +476,29 @@ LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
 (Font)              scaled to size 13.31541pt on input line 52.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 (Font)              scaled to size 13.31541pt on input line 52.
+LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <10> not available
+(Font)              Font shape `JT2/gt/m/n' tried instead on input line 64.
+LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
+(Font)              scaled to size 9.24683pt on input line 64.
+LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <10> not available
+(Font)              Font shape `JY2/gt/m/n' tried instead on input line 64.
+LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
+(Font)              scaled to size 9.24683pt on input line 64.
 [1
 
 ]
 
 LaTeX3 Info: Redefining command \BeforeClosingMainAux with sig. 'm' on line
-(LaTeX3)     57.
+(LaTeX3)     85.
 
 (out/2600200443-6.aux) ) 
 Here is how much of TeX's memory you used:
- 7484 strings out of 479460
- 116328 string characters out of 5870463
- 464982 words of memory out of 5000000
- 25036 multiletter control sequences out of 15000+600000
- 412381 words of font info for 74 fonts, out of 8000000 for 9000
+ 7491 strings out of 479460
+ 116413 string characters out of 5870463
+ 467982 words of memory out of 5000000
+ 25041 multiletter control sequences out of 15000+600000
+ 413311 words of font info for 78 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  97i,6n,102p,834b,263s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on out/2600200443-6.dvi (1 page, 1076 bytes).
+Output written on out/2600200443-6.dvi (1 page, 3608 bytes).

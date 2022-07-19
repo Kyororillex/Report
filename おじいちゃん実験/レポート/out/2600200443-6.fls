@@ -623,4 +623,60 @@ INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmss12.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisg-v.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisg-h.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmss12.tfm
+INPUT ./pic3.png
+INPUT ./pic3.png
+INPUT pic3.png
+INPUT extractbb -B cropbox -O pic3.png
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisr-v.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisr-h.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmr9.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisg-v.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisg-h.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmss10.tfm
+INPUT ./pic6.jpeg
+INPUT ./pic6.jpeg
+INPUT pic6.jpeg
+INPUT extractbb -B cropbox -O pic6.jpeg
+INPUT ./pic9.jpg
+INPUT ./pic9.jpg
+INPUT pic9.jpg
+INPUT extractbb -B cropbox -O pic9.jpg
+INPUT ./pic8.jpg
+INPUT ./pic8.jpg
+INPUT pic8.jpg
+INPUT extractbb -B cropbox -O pic8.jpg
+INPUT ./pic7.jpg
+INPUT ./pic7.jpg
+INPUT pic7.jpg
+INPUT extractbb -B cropbox -O pic7.jpg
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisr-h.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisr-h.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+INPUT ./pic5.png
+INPUT ./pic5.png
+INPUT pic5.png
+INPUT extractbb -B cropbox -O pic5.png
+INPUT ./pic4.png
+INPUT ./pic4.png
+INPUT pic4.png
+INPUT extractbb -B cropbox -O pic4.png
+INPUT ./pic10.png
+INPUT ./pic10.png
+INPUT pic10.png
+INPUT extractbb -B cropbox -O pic10.png
+INPUT ./pic11.png
+INPUT ./pic11.png
+INPUT pic11.png
+INPUT extractbb -B cropbox -O pic11.png
+INPUT ./pic12.png
+INPUT ./pic12.png
+INPUT pic12.png
+INPUT extractbb -B cropbox -O pic12.png
 INPUT out/2600200443-6.aux
