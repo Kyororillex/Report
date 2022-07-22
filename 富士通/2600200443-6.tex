@@ -1,0 +1,83 @@
+\documentclass[dvipdfmx,autodetect-engine,titlepage]{jsarticle}
+\usepackage[dvipdfm]{graphicx}
+\usepackage{ascmac}
+\usepackage{fancybox}
+\usepackage{listings}
+\usepackage{plistings}
+\usepackage{itembkbx}
+\usepackage{amsmath}
+\usepackage{svg}
+\usepackage{url}
+\usepackage{graphics}
+\usepackage{listings,jvlisting}
+
+\textheight=23cm
+\renewcommand{\figurename}{図}
+\renewcommand{\tablename}{表}
+\newenvironment{code}
+{\vspace{0.5zw}\VerbatimEnvironment  
+\begin{screen} 
+\baselineskip=1.0\normalbaselineskip
+ \begin{Verbatim}}
+{\end{Verbatim}
+\baselineskip=\normalbaselineskip
+ \end{screen}\vspace{0.5zw}} 
+
+\title{IoT\\
+第14週課題}
+
+\author{情報理工学部 SNコース 3回\\
+山下 恭平\\
+学籍番号:26002004436}
+\date{Jan 20 2022}
+
+\begin{document}
+
+\maketitle
+
+\section{最先端テクノロジーの社会実装に向けて必要と思われる要件}
+
+「冗談から始める」ということが最先端テクノロジーの社会実装に必要なことだと
+考えた。現代のITの技術力は私たちが想定しているものより、さらに高度な次元に
+達している。かつては夢の世界だと考えられていた自動運転や人工知能といった技術は
+現在、実用段階を超えさらなる応用段階に突入しているのがその証拠の一つだろう。
+こういった高度な技術は多く存在しているが、この技術を何に使うかといったことを
+考えるのが非常に難しいことを私は経験した。ハッカソンに参加した際、Azureのサービスを
+自由に使える環境を提供されたが、何に使用するかを思いつかずに結局データベースだけ
+を使用したのは悔しい思いでだ。また、アイデアソンといったアイデアを出すイベントが
+開催されるのは、技術をどう使うかが難しいからだと考えられる。そんな現代において、
+「こんなのがあればな」という思いや冗談は、とても重要なアイデアの一つだと考えるこ
+とができる。私たちのような、現代の技術に精通した者はそういった貴重な「アイデア」
+を出してもらえることで初めて、その技術を使用する機会を得ることができ、社会を
+より高度なものに発達させることができると私は考えた。
+
+\section{AIによる診断、医療AIについて}
+
+\subsection*{社会的背景}
+医者に対する需要は高いものも、供給も同様に早く、早ければ2024年にはその二つが
+均衡するとも言われている。さらに、日本には世界成功水準ともいえるほど、医療機器
+が豊富に行き渡っており、人口当たりのMRIの数は先進国平均の3倍、CTに関しては
+4.5倍存在している。しかし、それらの機器で撮影された画像を診断する「放射線科医」
+の数については、日本は世界最低レベルであり、日本の全ての病院に常勤することが
+できていないのが現実である。
+
+\subsection*{ビジネスモデルの提案}
+
+医師が不足していることにより画像診断が困難である問題を解決するために、
+AIによる画像診断が今後大きく発展すると考えられる。AIは画像分析を
+かなり得意としており、大量のデータをもとに学習を行うことで実用段階レベルまで
+の分析機能を持ったAIが開発可能だと考えた。
+
+\section*{参考文献}
+
+NTTDATA INSIGHT , 『医師の診断を効率化する画像診断AIへの期待と狙い』\\
+  \url{https://www.nttdata.com/jp/ja/data-insight/2021/0827/}\\
+
+GemMed , 『2024年にも需給が均衡し、その後は「医師過剰」になる―医師需給分科会で厚労省が推計』\\
+\url{https://gemmed.ghc-j.com/?p=8314}\\
+
+新潟大学 Web Magazine , 『放射線診断医を知っていますか？』\\
+\url{https://www.niigata-u.ac.jp/webmagazine/152902/}
+
+\end{document}
+
