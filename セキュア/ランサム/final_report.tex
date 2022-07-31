@@ -1,0 +1,75 @@
+\documentclass[dvipdfmx,autodetect-engine]{jsarticle}
+\usepackage[dvipdfm]{graphicx}
+\usepackage{ascmac}
+\usepackage{fancybox}
+\usepackage{listings}
+\usepackage{plistings}
+\usepackage{itembkbx}
+\usepackage{amsmath}
+\usepackage{svg}
+\usepackage{url}
+\usepackage{graphics}
+\usepackage{listings,jvlisting}
+\usepackage{here}
+
+\lstset{
+  basicstyle={\ttfamily},
+  identifierstyle={\small},
+  commentstyle={\smallitshape},
+  keywordstyle={\small\bfseries},
+  ndkeywordstyle={\small},
+  stringstyle={\small\ttfamily},
+  frame={tb},
+  breaklines=true,
+  columns=[l]{fullflexible},
+  numbers=left,
+  xrightmargin=0zw,
+  xleftmargin=3zw,
+  numberstyle={\scriptsize},
+  stepnumber=1,
+  numbersep=1zw,
+  lineskip=-0.5ex
+}
+
+\textheight=23cm
+\renewcommand{\figurename}{図}
+\renewcommand{\tablename}{表}
+\newenvironment{code}
+{\vspace{0.5zw}\VerbatimEnvironment  
+\begin{screen} 
+\baselineskip=1.0\normalbaselineskip
+ \begin{Verbatim}}
+{\end{Verbatim}
+\baselineskip=\normalbaselineskip
+ \end{screen}\vspace{0.5zw}} 
+
+ \title{プロセスログの調査によるランサムウェアの動的解析} 
+ \author{山下恭平、塚本覇虎、奥若菜}
+ \date{2022年7月30日}
+ \begin{document} 
+ \maketitle
+
+\section{実験の背景と目的}
+
+
+\section{実行環境}
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|c|c|}
+  \hline
+  ソフトウェア名                         & バージョン          \\ \hline
+  Oracle Virtual Box              & 6.1.32 r149290 \\ \hline
+  Windows10 Enterprise Evaluation & 1809           \\ \hline
+  Process Monitor                 & 3.89           \\ \hline
+  \end{tabular}
+  \end{table}
+
+  \begin{figure}[H]
+    \centering
+    \fbox{\includegraphics[scale=0.6]{pic0.png}}
+    \caption{実行環境図}
+  \end{figure}
+
+\end{document}
+

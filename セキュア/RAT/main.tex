@@ -6,10 +6,9 @@
 \usepackage{plistings}
 \usepackage{itembkbx}
 \usepackage{amsmath}
-\usepackage{svg}
 \usepackage{url}
 \usepackage{graphics}
-\usepackage{listings,jvlisting}
+\usepackage{listings}
 \usepackage{here}
 
 \lstset{
@@ -35,7 +34,7 @@
 \renewcommand{\figurename}{図}
 \renewcommand{\tablename}{表}
 \newenvironment{code}
-{\vspace{0.5zw}\VerbatimEnvironment  
+{\vspace{0.5zw}\VerbatimEnvironment
 \begin{screen} 
 \baselineskip=1.0\normalbaselineskip
  \begin{Verbatim}}
@@ -43,15 +42,15 @@
 \baselineskip=\normalbaselineskip
  \end{screen}\vspace{0.5zw}} 
 
- \title{Process Monitorを用いたマルウェアの動的解析} 
+ \title{Process Monitorを用いたRAT型マルウェアの動的解析} 
  \author{山下恭平、塚本覇虎、奥若菜}
- \date{2022年5月17日}
+ \date{2022年6月14日}
  \begin{document} 
  \maketitle
 
 \section{テーマ}
-この実験では、擬似マルウェアツールShinoBotとProcess Monitorを用いた
-マルウェアの動的解析を行う。
+プロセスのログ解析によるマルウェアの検出を目標に、RAT型擬似マルウェアツールShinoBotと
+監視ツールProcess Monitorを用いたマルウェアの動的解析を行う。\\
 
 \section{環境}
 本実験は以下の県境において実験を行う。
@@ -63,15 +62,18 @@
   \end{itemize}
  \end{quote}
 
-\section{行なったこと}
-感染PCの特定のァイルをShinoBotから命令を送り削除した時のプロセスのログと、
-通常の削除のログを取り、双方のログを比較しながら、怪しいプロセスの特定を
-行った。
+\section{実験}
+\subsection{実験の概要}
+ShinoBotから感染PCに命令を送り、特定のァイルを削除した時のプロセスのログと、
+コマンドプロンプトから直接ファイルを削除したときのプロセスのログを取り、双方のログを比較しながら、RAT型マルウェアに見られる振る舞いを調査した。\\
 
-\section{RATの解析}
 
-\subsection{RATと通常プロセスの比較}
-あああああ
+\subsection{プロセスの比較}
+図1、2にそれぞれ、ShinoBOTを用いてファイル削除を行なったときと、通常操作でファイルを削除したときの、プロセスの親子関係と採取されたログの量を示した。
+ShinoBOTを用いる場合、ShinoBOTの実行ファイルが起動しているPCに遠隔から命令を送ると、ShinoBOTがコマンドプロンプト(cmd)を呼び出す。次に、コマンドプロンプトはConhostを呼び出す。
+Conhostは外部からコマンドプロンプトを実行する際に用いられる実行ファイルである。その後、コマンドプロンプトがpowershellを呼び出し、powershellが実際にファイル削除を行う。
+一方、通常操作の場合、ユーザーがコマンドプロンプトを起動させ、命令コマンドを直接打ち込まれる。その際、コマンドプロンプトによってまずconhostが呼び出されるが、conhostは何の動作も行わなかった。その後は、ShinoBotの場合と同じくpewershellが起動され、ファイルが削除された。
+pewershellのログの量や内容から、どちらの場合も削除自体のプロセスにほとんど違いがないことがわかった。\\\\
 
 \begin{figure}[H]
   \centering
@@ -79,15 +81,13 @@
   \caption{}
 \end{figure}
 
-ああああ
-
 \begin{figure}[H]
   \centering
-  \fbox{\includegraphics[scale=0.4]{通常.png}}
+  \fbox{\includegraphics[scale=0.38]{normal.png}}
   \caption{}
 \end{figure}
 
-\subsection{削除に用いられたAPI}
+\subsection{用いられたAPIの比較}
 
 比較を行ったそれぞれのプロセスにおいて、実際にファイルの削除を行なっていた
 APIを確認したところ、同一のAPIが利用されていることが確認できた。以下は
@@ -95,15 +95,13 @@ APIを確認したところ、同一のAPIが利用されていることが確�
 
 \begin{figure}[H]
   \centering
-  \fbox{\includegraphics[scale=0.4]{pic1.png}}
+  \fbox{\includegraphics[scale=0.4]{pic.png}}
   \caption{}
 \end{figure}
 
 このAPIはマイクロソフトの公式ドキュメントにて、内容が公開されていたので、
 その内容を記載する。\begin{math}
-  ^{(1)}
-\end{math}
-
+  ^{(1)}\end{math}
 
 \begin{lstlisting}[caption=C++]
 
@@ -129,8 +127,15 @@ APIを確認したところ、同一のAPIが利用されていることが確�
   \end{table}
 
 
-\subsection{怪しい点}
+\subsection{通信の観測}
 
+\begin{figure}[H]
+  \centering
+  \fbox{\includegraphics[scale=0.6]{tcp.png}}
+  \caption{}
+\end{figure}
+
+\section{考察}
 削除におけるプロセスの大部分が一位している点、用いられるAPIが通常のプロセス
 と一致している点などを考慮すると。削除を行う一連のプロセス内にマルウェアだと
 特徴づけるプロセスは存在しないと考えられる。この時、通信ログに着目すると削除のプロセスが
@@ -138,19 +143,6 @@ APIを確認したところ、同一のAPIが利用されていることが確�
 ことが確認できる。RATに感染しているコンピュータはサーバから送られてくる命令を
 実行するので、前後の通信によって、命令の受信、命令結果の送信を行なっていると
 考えらる。RATに感染したコンピュータから、RATを検出する方法として、通信ログの
-確認が有効な手段だと考えられる。
-
-\begin{figure}[H]
-  \centering
-  \fbox{\includegraphics[scale=0.6]{TCPログ.png}}
-  \caption{}
-\end{figure}
-
-\section{参考文献}
-
-(1) マイクロソフト\\
-\url{https://docs.microsoft.com/ja-jp/windows-hardware/drivers/ddi/ntddk/ns-ntddk-_file_disposition_information_ex}
-
+確認が有効な手段だと考えられる
 
 \end{document}
-
